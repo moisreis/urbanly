@@ -1,0 +1,56 @@
+@use "sass:map";
+@use "sass:color";
+
+/**
+ * @file        _color.scss
+ * @description Defines the core color palette for Urbanly. Includes base background,
+ *              primary and secondary action colors, and text styles. Also includes
+ *              hover, active, and light variants derived from main colors using
+ *              color functions from the Sass standard library.
+ * @component   Design Tokens
+ * @author      Moisés Reis
+ * @created     2025-06-05
+ */
+
+// Background system colors
+// --------------------------------------------------
+// Provides neutral background and border colors that define the tone
+// of the UI. Derived accents help add subtle depth to containers.
+$background: #ffffff;
+$accent: darken($background, 2.5%);
+$border: darken($background, 5%);
+
+// Primary color palette
+// --------------------------------------------------
+// Represents the main interactive color used in buttons, links, and active
+// states. Variants support hover, active feedback, and soft backgrounds.
+$primary: #00809D;
+$primary-hover: darken($primary, 5%);
+$primary-active: darken($primary, 10%);
+$primary-light: lighten($primary, 60%);
+
+// Secondary color palette
+// --------------------------------------------------
+// Used for secondary actions or elements that need attention without
+// competing with the primary color. Ideal for accents and callouts.
+$secondary: #FF7601;
+$secondary-hover: darken($secondary, 5%);
+$secondary-active: darken($secondary, 10%);
+$secondary-light: lighten($secondary, 60%);
+
+// Tertiary color palette
+// --------------------------------------------------
+// Used for subtle accents, highlights, or supporting visual elements.
+// Less prominent than primary/secondary but helps with visual hierarchy.
+$tertiary: #819A91;
+$tertiary-hover: darken($tertiary, 5%);
+$tertiary-active: darken($tertiary, 10%);
+$tertiary-light: lighten($tertiary, 60%);
+
+// Text colors
+// --------------------------------------------------
+// Defines core text styles for headings, body, and muted/inactive text.
+// Designed to provide optimal legibility and contrast.
+$text-body: #444444;
+$text-heading: #111111;
+$text-muted: #999999;

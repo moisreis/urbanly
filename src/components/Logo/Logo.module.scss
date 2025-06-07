@@ -1,0 +1,21 @@
+@use "sass:map";
+@use "../../styles/config/settings/spacing" as *;
+@use "../../styles/config/settings/color" as *;
+@use "../../styles/config/tools/flex" as *;
+
+.Container {
+  width: map.get($spacing, "xl");
+  height: map.get($spacing, "xl");
+
+  & > img {
+    width: 100%;
+    height: 100%;
+
+    &:hover {
+      transform: rotate(90deg);
+      transition-property: transform, translate, scale, rotate;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 350ms;
+    }
+  }
+}

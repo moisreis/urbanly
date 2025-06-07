@@ -1,0 +1,22 @@
+/**
+ * @file        _mixins.scss
+ * @description Centralizes all SCSS mixins used across the Urbanly application.
+ *              These utilities provide reusable logic for layout, grid systems,
+ *              responsiveness, and element positioning.
+ * @component   Shared Utility
+ * @author      Moisés Reis
+ * @created     2025-06-05
+ */
+
+// ==================================================
+// 🛠️ TOOLS: MIXINS LIBRARY
+// --------------------------------------------------
+// Loads modular SCSS mixins that encapsulate reusable logic
+// for layout structure, responsive design, spacing, positioning,
+// and visual consistency throughout the application.
+// ==================================================
+@use "tools/border";
+@use "tools/flex";
+@use "tools/grid";
+@use "tools/mediaQuery";
+@use "tools/position";

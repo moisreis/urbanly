@@ -1,0 +1,21 @@
+@mixin Absolute_center {
+  /* @mixin `Absolute_center` */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin Absolute_x {
+  /* @mixin `Absolute_x` */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+@mixin Absolute_y {
+  /* @mixin `Absolute_y` */
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}

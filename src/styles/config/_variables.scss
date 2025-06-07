@@ -1,0 +1,33 @@
+/**
+ * @file        _variables.scss
+ * @description Centralizes design tokens used globally in the Urbanly application.
+ *              This includes foundational values such as colors, typography scales,
+ *              and spacing units for consistent and maintainable styling.
+ * @component   Global Design Tokens
+ * @author      Moisés Reis
+ * @created     2025-06-05
+ */
+
+// ==================================================
+// 🎨 SETTINGS: COLORS
+// --------------------------------------------------
+// Imports color variables for backgrounds, text, borders, and
+// interactive elements, ensuring visual consistency across UI.
+// ==================================================
+@use "settings/color";
+
+// ==================================================
+// 🔤 SETTINGS: TYPOGRAPHY
+// --------------------------------------------------
+// Imports typography tokens like font families, sizes, weights,
+// and line heights to maintain a scalable typographic system.
+// ==================================================
+@use "settings/typography";
+
+// ==================================================
+// 📏 SETTINGS: SPACING
+// --------------------------------------------------
+// Imports spacing scale used for padding, margin, and layout gaps,
+// following a consistent modular spacing system.
+// ==================================================
+@forward "settings/spacing";

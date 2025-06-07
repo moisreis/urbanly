@@ -1,0 +1,52 @@
+@use "sass:map";
+
+/**
+ * @file        _typography.scss
+ * @description Defines typography design tokens including font sizes, families, weights, and line heights.
+ * @component   Design Tokens
+ * @author      Moisés Reis
+ * @created     2025-06-05
+ */
+
+// Base unit for font-size values.
+$base: 1rem !default;
+
+// Typography scale map: font sizes relative to base.
+// --------------------------------------------------
+// Provides a predictable set of typographic scales from 2xs to 3xl.
+$font-size: (
+        "2xs": $base * 0.75,
+        "xs": $base * 0.875,
+        "sm": $base * 1,
+        "md": $base * 1.125,
+        "lg": $base * 1.25,
+        "xl": $base * 1.5,
+        "2xl": $base * 2,
+        "3xl": $base * 2.5
+) !default;
+
+// Font family map: defines typeface categories.
+// --------------------------------------------------
+// Centralizes choice of fonts for consistency.
+$font-family: (
+        "sans": 'Inter', // Sans-serif for body text
+        "heading": 'Cardo' // Serif for headings
+) !default;
+
+// Font weight map: defines semantic weight names.
+// --------------------------------------------------
+// Provides clarity and avoids magic numbers in weight usage.
+$font-weight: (
+        "light": 300,
+        "normal": 400,
+        "medium": 500,
+        "bold": 600,
+        "extraBold": 900
+) !default;
+
+// Line height map: defines spacing between lines.
+// Ensures readability by controlling vertical rhythm.
+$line-height: (
+        "body": 1.15,
+        "heading": 1.5
+) !default;

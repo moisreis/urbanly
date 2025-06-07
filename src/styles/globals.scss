@@ -1,0 +1,25 @@
+/**
+ * @file        globals.scss
+ * @description Global styles applied to the Urbanly application. Defines basic resets, global typography, and layout configurations that affect all pages.
+ * @component   Global
+ * @author      Moisés Reis
+ * @created     2025-06-05
+ */
+
+// ==================================================
+// 🧼 RESET
+// --------------------------------------------------
+// Loads base reset styles to normalize browser inconsistencies
+// across elements and ensure consistent rendering.
+// ==================================================
+@use "config/reset";
+
+// ==================================================
+// ⚙️ CONFIGURATION
+// --------------------------------------------------
+// Loads global design tokens (variables) and utility mixins
+// for use across all style modules.
+// ==================================================
+@use "config/variables";
+@use "config/mixins";
+

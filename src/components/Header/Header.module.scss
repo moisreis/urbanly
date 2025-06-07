@@ -1,0 +1,22 @@
+@use "sass:map";
+@use "../../styles/config/settings/spacing" as *;
+@use "../../styles/config/settings/color" as *;
+@use "../../styles/config/tools/flex" as *;
+@use "../../styles/config/tools/border" as *;
+
+.Container {
+  padding: map.get($spacing, "md");
+  @include Border_bottom;
+  @include Flex_row-between;
+
+  &_left {
+    @include Flex_row-start;
+    width: 100%;
+  }
+
+  &_right {
+    @include Flex_row-end;
+    width: 100%;
+    gap: map.get($spacing, "xs");
+  }
+}

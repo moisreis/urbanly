@@ -1,0 +1,6 @@
+@use "sass:map";
+@use "../../styles/config/settings/spacing" as *;
+
+.Footer {
+  padding: map.get($spacing, "2xs");
+}

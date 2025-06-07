@@ -1,0 +1,38 @@
+@use "../settings/color" as *;
+
+@mixin Border {
+  /* @mixin `Border` */
+  border: 1px solid $border;
+}
+
+@mixin Border_x {
+  /* @mixin `Border_x` */
+  border-left: 1px solid $border;
+  border-right: 1px solid $border;
+}
+
+@mixin Border_left {
+  /* @mixin `Border_left` */
+  border-left: 1px solid $border;
+}
+
+@mixin Border_right {
+  /* @mixin `Border_right` */
+  border-right: 1px solid $border;
+}
+
+@mixin Border_y {
+  /* @mixin `Border_y` */
+  border-top: 1px solid $border;
+  border-bottom: 1px solid $border;
+}
+
+@mixin Border_top {
+  /* @mixin `Border_top` */
+  border-top: 1px solid $border;
+}
+
+@mixin Border_bottom {
+  /* @mixin `Border_bottom` */
+  border-bottom: 1px solid $border;
+}

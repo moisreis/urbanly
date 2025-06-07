@@ -1,0 +1,26 @@
+$screenMobile: 30rem; // 480px
+$screenTablet: 48rem; // 768px
+$screenDesktop: 64rem; // 1024px
+
+@mixin media($query) {
+  @if $query == isOnDesktop {
+    @media (min-width: $screenDesktop) {
+      /* @mixin `media(isOnDesktop)` */
+      @content;
+    }
+  }
+
+  @if $query == isOnTablet {
+    @media (min-width: $screenTablet) {
+      /* @mixin `media(isOnTablet)` */
+      @content;
+    }
+  }
+
+  @if $query == isOnMobile {
+    @media (min-width: $screenMobile) {
+      /* @mixin `media(isOnMobile)` */
+      @content;
+    }
+  }
+}

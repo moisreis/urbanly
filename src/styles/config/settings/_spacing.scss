@@ -1,0 +1,31 @@
+@use "sass:map";
+
+/**
+ * @file        _spacing.scss
+ * @description Defines a standardized spacing scale for consistent layout margins and paddings across the project.
+ *              This spacing system uses a base unit and predefined size labels to promote uniformity and maintainability.
+ * @component   Design Tokens
+ * @author      Moisés Reis
+ * @created     2025-06-05
+ */
+
+// Base unit for spacing values.
+// --------------------------------------------------
+// This foundational unit (4px) enables scalable and consistent spacing increments throughout the UI.
+$base: 4px !default;
+
+// Spacing scale map: predefined spacing sizes mapped to multiples of the base unit.
+// --------------------------------------------------
+// This map provides a clear and reusable set of spacing tokens from very small (2xs) to very large (3xl).
+// Using this map enforces design consistency and reduces arbitrary spacing values.
+$spacing: (
+        "2xs": $base * 1,  // 4px
+        "xs":  $base * 2,  // 8px
+        "sm":  $base * 3,  // 12px
+        "md":  $base * 4,  // 16px
+        "lg":  $base * 6,  // 24px
+        "xl":  $base * 8,  // 32px
+        "2xl": $base * 12, // 48px
+        "3xl": $base * 16  // 64px
+) !default;
+

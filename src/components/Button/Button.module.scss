@@ -1,0 +1,19 @@
+@use "sass:map";
+@use "../../styles/config/settings/spacing" as *;
+@use "../../styles/config/settings/color" as *;
+@use "../../styles/config/settings/typography" as *;
+@use "../../styles/config/tools/flex" as *;
+@use "../../styles/config/tools/border" as *;
+
+.Container {
+  @include Flex_row-center;
+  padding: map.get($spacing, "xs") map.get($spacing, "md");
+  background-color: $primary;
+  @include Border;
+  font-family: map.get($font-family, "sans");
+  color: $background;
+
+  &:hover {
+    background-color: $primary-hover;
+  }
+}

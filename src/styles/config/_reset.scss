@@ -1,0 +1,122 @@
+/**
+ * @file        _reset.scss
+ * @description Establishes a consistent and cross-browser baseline for all HTML elements.
+ *              Integrates core design tokens such as color, typography, and spacing to ensure
+ *              Urbanly’s visual language is reflected from the root level. Includes box model reset,
+ *              default styles for body, media elements, headings, and form controls.
+ * @component   Global Styles
+ * @author      Moisés Reis
+ * @created     2025-06-05
+ */
+
+@use "sass:map";
+@use "../../styles/config/settings/spacing" as *;
+@use "../../styles/config/settings/color" as *;
+@use "../../styles/config/settings/typography" as *;
+
+// ==================================================
+// ⚙️ RESET: BOX-SIZING SETUP
+// --------------------------------------------------
+// Apply border-box sizing to all elements and their pseudo-elements
+// to include padding and borders within the element's total width and height.
+// This approach ensures consistent box models across all browsers,
+// simplifying layout calculations and avoiding unexpected element sizes.
+// ==================================================
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+// ==================================================
+// 🧹 RESET: REMOVE DEFAULT MARGIN AND PADDING
+// --------------------------------------------------
+// Remove all default margin and padding from all elements.
+// This is the foundation of any CSS reset, ensuring consistent spacing
+// across browsers, which vary widely in their default user-agent styles.
+// ==================================================
+* {
+  margin: 0;
+  padding: 0;
+}
+
+// ==================================================
+// 🏠 RESET: BODY BASE STYLES
+// --------------------------------------------------
+// Establish fundamental body styles using core design tokens:
+// - Use flexbox for vertical layout.
+// - Apply consistent background and text colors reflecting the brand palette.
+// - Set a readable line-height and a clean sans-serif font family.
+// These choices form a solid, maintainable typographic baseline for the entire site.
+// ==================================================
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: $background;
+  color: $text-body;
+  line-height: map.get($line-height, "body");
+  font-family: map.get($font-family, "sans");
+}
+
+// ==================================================
+// 🖼️ RESET: MEDIA ELEMENTS DISPLAY AND RESPONSIVENESS
+// --------------------------------------------------
+// Set media elements (images, picture, SVG) to display as block-level elements
+// and constrain their max-width to 100% of their containers.
+// This ensures media scales fluidly and respects container boundaries,
+// essential for responsive design and avoiding layout breaks.
+// ==================================================
+img,
+picture,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+// ==================================================
+// 🎛️ RESET: FORM CONTROL FONT INHERITANCE
+// --------------------------------------------------
+// Make form controls (input, button, textarea, select) inherit font styles
+// from their parent elements instead of using browser defaults.
+// This unifies typography and visual rhythm across UI components,
+// improving design consistency and user experience.
+// ==================================================
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+// ==================================================
+// 🏷️ RESET: HEADING TYPOGRAPHY
+// --------------------------------------------------
+// Define color and line-height for all headings to maintain visual hierarchy.
+// Use predefined typography scales from design tokens to ensure consistent sizing
+// across all headings (h1–h6), reinforcing a clear content structure.
+// ==================================================
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $text-heading;
+  line-height: map.get($line-height, "heading");
+}
+
+h1 {
+  font-size: map.get($font-size, "3xl");
+}
+
+h2 {
+  font-size: map.get($font-size, "2xl");
+}
+
+h3 {
+  font-size: map.get($font-size, "xl");
+}
+
+h4 {
+  font-size: map.get($font-size, "lg");
+}
