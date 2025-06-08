@@ -7,12 +7,14 @@ const Header = () => {
     return (
         <header className={style.Container}>
             <div className={style.Container_left}>
-                <Logo/>
+                <Logo hasBackground={true} />
             </div>
             <div className={style.Container_right}>
-                <Button label="Alugar"/>
-                <Button label="Comprar"/>
-                <Button label="Vender"/>
+                <Button label="Alugar" variant="link" hasBackground={true}/>
+                <Button label="Comprar" variant="link" hasBackground={true}/>
+                <Button label="Vender" variant="link" hasBackground={true}/>
+                <Button label="Anunciar" variant="link" hasBackground={true}/>
+                <Button label="Entrar" variant="outline" hasBackground={true}/>
             </div>
         </header>
     );

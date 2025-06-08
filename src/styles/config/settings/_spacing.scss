@@ -19,13 +19,14 @@ $base: 4px !default;
 // This map provides a clear and reusable set of spacing tokens from very small (2xs) to very large (3xl).
 // Using this map enforces design consistency and reduces arbitrary spacing values.
 $spacing: (
-        "2xs": $base * 1,  // 4px
-        "xs":  $base * 2,  // 8px
-        "sm":  $base * 3,  // 12px
-        "md":  $base * 4,  // 16px
-        "lg":  $base * 6,  // 24px
-        "xl":  $base * 8,  // 32px
+        "2xs": $base * 1, // 4px
+        "xs": $base * 2, // 8px
+        "sm": $base * 3, // 12px
+        "md": $base * 4, // 16px
+        "lg": $base * 6, // 24px
+        "xl": $base * 8, // 32px
         "2xl": $base * 12, // 48px
-        "3xl": $base * 16  // 64px
+        "3xl": $base * 16, // 64px
+        "4xl": $base * 24 // 64px
 ) !default;
 

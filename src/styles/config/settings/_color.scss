@@ -16,9 +16,11 @@
 // --------------------------------------------------
 // Provides neutral background and border colors that define the tone
 // of the UI. Derived accents help add subtle depth to containers.
-$background: #ffffff;
+$background: #fafafa;
 $accent: darken($background, 2.5%);
+$accent-active: darken($background, 3.5%);
 $border: darken($background, 5%);
+$white: #ffffff;
 
 // Primary color palette
 // --------------------------------------------------

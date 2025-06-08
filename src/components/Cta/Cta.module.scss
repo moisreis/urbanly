@@ -1,0 +1,60 @@
+@use "sass:map";
+@use "../../styles/config/settings/spacing" as *;
+@use "../../styles/config/settings/color" as *;
+@use "../../styles/config/settings/typography" as *;
+@use "../../styles/config/tools/flex" as *;
+@use "../../styles/config/tools/border" as *;
+@use "../../styles/config/tools/position" as *;
+
+$ctaHeight: 70vh;
+$ctaWidth: 100vw;
+$imgHeight: 100%;
+$imgWidth: 100%;
+$overlayBg: #00000030;
+
+@mixin borderBottomRadius {
+  border-bottom-left-radius: map.get($spacing, "lg");
+  border-bottom-right-radius: map.get($spacing, "lg");
+}
+
+.container {
+  height: $ctaHeight;
+  @include Flex_col-between;
+  @include borderBottomRadius;
+
+  &_content {
+    position: relative;
+    z-index: 10;
+    @include Flex_col-center;
+    align-items: center;
+    height: 100%;
+    gap: map.get($spacing, "lg");
+
+    & > h1 {
+      font-family: 'Gambarino-Regular';
+    }
+  }
+
+  &_background {
+    height: $ctaHeight;
+    width: $ctaWidth;
+    @include Absolute_x;
+    z-index: 0;
+    @include borderBottomRadius;
+
+    & > img {
+      height: $imgHeight;
+      width: $imgWidth;
+      object-fit: cover;
+      @include borderBottomRadius;
+    }
+
+    &__overlay {
+      height: $imgHeight;
+      width: $imgWidth;
+      @include Absolute_center;
+      background-color: $overlayBg;
+      @include borderBottomRadius;
+    }
+  }
+}
