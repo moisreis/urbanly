@@ -1,14 +1,14 @@
 import style from "./Input.module.scss";
-import {MapPin} from 'lucide-react';
 
 interface InputProps {
     isLabelVisible?: boolean;
     label: string;
     id: string;
     size?: "normal" | "large";
+    children?: React.ReactNode;
 }
 
-const Input: React.FC<InputProps> = ({label, id, size = "normal", isLabelVisible = true}) => {
+const Input: React.FC<InputProps> = ({label, id, children, size = "normal", isLabelVisible = true}) => {
     const sizeClass = style[`container_input__${size}`];
 
     return (
@@ -17,7 +17,7 @@ const Input: React.FC<InputProps> = ({label, id, size = "normal", isLabelVisible
                 <label htmlFor={id}>{label}</label>
             )}
             <div className={style.container_inner}>
-                <MapPin className={style.container_input__icon} color="red" size={48}/>
+                {children}
                 <input
                     className={`${style.container_input} ${sizeClass}`}
                     id={id}

@@ -44,7 +44,7 @@
   /* @mixin `Flex_row-between` */
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 @mixin Flex_col {

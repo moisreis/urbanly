@@ -15,6 +15,14 @@ $largePaddingY: map.get($spacing, "lg") + 4;
 
   &_inner {
     position: relative;
+
+    & > svg {
+      @include Absolute_y;
+      left: 1rem;
+      width: map.get($spacing, "md");
+      height: map.get($spacing, "md");
+      stroke: $text-muted;
+    }
   }
 
   &_input {
@@ -31,14 +39,6 @@ $largePaddingY: map.get($spacing, "lg") + 4;
     &:active, &:focus, &:focus-visible {
       outline: 1px solid rgba($border, 0.5);
       outline-offset: 2px;
-    }
-
-    &__icon {
-      @include Absolute_y;
-      left: 1rem;
-      width: map.get($spacing, "md");
-      height: map.get($spacing, "md");
-      stroke: $text-muted;
     }
 
     &__normal {

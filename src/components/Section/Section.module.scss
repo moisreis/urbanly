@@ -1,0 +1,31 @@
+@use "sass:map";
+@use "../../styles/config/settings/spacing" as *;
+@use "../../styles/config/settings/color" as *;
+@use "../../styles/config/settings/typography" as *;
+@use "../../styles/config/tools/flex" as *;
+@use "../../styles/config/tools/grid" as *;
+@use "../../styles/config/tools/border" as *;
+
+.container {
+  @include Flex_col-start;
+  width: 90vw;
+  margin: auto;
+  margin-top: 5vh !important;
+  gap: map.get($spacing, "xl");
+
+  &_header {
+    @include Flex_row-between;
+
+    & > h2 {
+      font-family: map.get($font-family, "heading");
+      font-weight: map.get($font-weight, "light");
+      font-size: map.get($font-size, "xl");
+      text-transform: capitalize;
+    }
+  }
+
+  &_grid {
+    @include Grid_5;
+    gap: map.get($spacing, "2xl");
+  }
+}

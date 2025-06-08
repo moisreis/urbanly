@@ -15,72 +15,70 @@ $overlayBg: #00000070;
 $headingShadow: 0 0 10px rgba(0, 0, 0, .65);
 
 .container {
-  height: $ctaHeight;
-  @include Flex_col-between;
-
-  &_content {
-    position: relative;
-    z-index: 10;
-    @include Flex_col-start;
-    align-items: center;
-    height: 65%;
-
-    & > h1 {
-      font-family: map.get($font-family, "heading");
-      color: $background;
-      font-weight: map.get($font-weight, "light");
-      font-size: map.get($font-size, "4xl");
-      text-shadow: $headingShadow;
-    }
-
-    & > h2 {
-      font-family: map.get($font-family, "heading");
-      color: rgba($background, 0.8);
-      font-weight: map.get($font-weight, "light");
-      font-size: map.get($font-size, "lg");
-      text-shadow: $headingShadow;
-    }
-
-    & > form {
-      margin-top: map.get($spacing, "xl");
-    }
-    & > span {
-      font-family: map.get($font-family, "sans");
-      color: rgba($background, 0.8);
-      font-weight: map.get($font-weight, "bold");
-      font-size: map.get($font-size, "2xs");
-      text-transform: uppercase;
-      @include Absolute_x;
-      bottom: map.get($spacing, "lg");
-    }
-
-    &__form {
-      @include Flex_row-center;
-      gap: map.get($spacing, "xs");
-    }
-  }
-
-  &_background {
-    height: $ctaHeight;
-    width: $ctaWidth;
-    @include Absolute_x;
-    z-index: 0;
-
-    & > img {
-      height: $imgHeight;
-      width: $imgWidth;
-      object-fit: cover;
-    }
-
-    &__overlay {
-      height: $imgHeight;
-      width: $imgWidth;
-      @include Absolute_center;
-      background-color: $overlayBg;
-    }
-  }
-}
-
-.containerWrapper {
   @include Flex_col-start;
+
+  &_wrapper {
+    height: $ctaHeight;
+    @include Flex_col-between;
+
+    &__content {
+      position: relative;
+      z-index: 10;
+      @include Flex_col-start;
+      align-items: center;
+      height: 65%;
+
+      & > h1 {
+        font-family: map.get($font-family, "heading");
+        color: $background;
+        font-weight: map.get($font-weight, "light");
+        font-size: map.get($font-size, "4xl");
+        text-shadow: $headingShadow;
+      }
+
+      & > h2 {
+        font-family: map.get($font-family, "heading");
+        color: rgba($background, 0.8);
+        font-weight: map.get($font-weight, "light");
+        font-size: map.get($font-size, "lg");
+        text-shadow: $headingShadow;
+      }
+
+      & > form {
+        margin-top: map.get($spacing, "xl");
+        @include Flex_row-center;
+        gap: map.get($spacing, "xs");
+      }
+
+      & > span {
+        font-family: map.get($font-family, "sans");
+        color: rgba($background, 0.8);
+        font-weight: map.get($font-weight, "bold");
+        font-size: map.get($font-size, "2xs");
+        text-transform: uppercase;
+        @include Absolute_x;
+        bottom: map.get($spacing, "lg");
+      }
+    }
+
+    &__background {
+      height: $ctaHeight;
+      width: $ctaWidth;
+      @include Absolute_x;
+      z-index: 0;
+
+      & > img {
+        height: $imgHeight;
+        width: $imgWidth;
+        object-fit: cover;
+      }
+
+      &__overlay {
+        height: $imgHeight;
+        width: $imgWidth;
+        @include Absolute_center;
+        background-color: $overlayBg;
+      }
+    }
+  }
 }

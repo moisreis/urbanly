@@ -1,5 +1,5 @@
 import styles from "./Cta.module.scss";
-import {Search} from 'lucide-react';
+import {Search, MapPin} from 'lucide-react';
 
 import Image from 'next/image'
 
@@ -8,34 +8,44 @@ import Input from "../Input/Input";
 import Button from "../Button/Button";
 import Badge from "../Badge/Badge";
 
-const Cta = () => {
+interface CtaProps {
+    badgeLabel: string;
+    ctaTitle: string;
+    ctaDescription: string;
+    ctaBottomText: string;
+    bgImage: string;
+}
+
+const Cta:React.FC<CtaProps> = ({badgeLabel, ctaTitle, ctaDescription, ctaBottomText, bgImage}) => {
     return (
-        <div className={styles.containerWrapper}>
         <section className={styles.container}>
-            <Header/>
-            <div className={styles.container_content}>
-                <Badge variant="blur" label="+20 anos de experiência" hasBackground={true} />
-                <h1>Explore as melhores propriedades da região</h1>
-                <h2>Clientes satisfeitos em mais de 30 cidades</h2>
-                <form className={styles.container_content__form}>
-                    <Input label="Apartamentos mobiliados, Itaitu" id="search" isLabelVisible={false} size="large"/>
-                    <Button hasBackground={true} variant="primary">
-                        <Search/>
-                    </Button>
-                </form>
-                <span>Explore 700+ casas e apartamentos para venda e aluguel em toda a região</span>
-            </div>
-            <div className={styles.container_background}>
-                <Image
-                    src="/images/mx4mSkK9zeo.jpg"
-                    width={2048}
-                    height={2048}
-                    alt="Urbanly"
-                />
-                <div className={styles.container_background__overlay}></div>
+            <div className={styles.container_wrapper}>
+                <Header/>
+                <div className={styles.container_wrapper__content}>
+                    <Badge variant="blur" label={badgeLabel} hasBackground={true}/>
+                    <h1>{ctaTitle}</h1>
+                    <h2>{ctaDescription}</h2>
+                    <form>
+                        <Input label="Apartamentos mobiliados, Itaitu" id="search" isLabelVisible={false} size="large">
+                            <MapPin/>
+                        </Input>
+                        <Button hasBackground={true} variant="primary">
+                            <Search/>
+                        </Button>
+                    </form>
+                    <span>{ctaBottomText}</span>
+                </div>
+                <div className={styles.container_wrapper__background}>
+                    <Image
+                        src={bgImage}
+                        width={2048}
+                        height={2048}
+                        alt="Urbanly"
+                    />
+                    <div className={styles.container_wrapper__background__overlay}></div>
+                </div>
             </div>
         </section>
-        </div>
     )
 }
 
