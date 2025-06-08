@@ -13,11 +13,11 @@ const Cta = () => {
                 <form>
                     <input type="text" placeholder="Explore"/>
                 </form>
-                <span>Explore +700 casas e apartamentos para venda e aluguel em toda a região</span>
+                <span>Explore 700+ casas e apartamentos para venda e aluguel em toda a região</span>
             </div>
             <div className={styles.container_background}>
                 <Image
-                    src="/images/2d4lAQAlbDA.jpg"
+                    src="/images/mx4mSkK9zeo.jpg"
                     width={2048}
                     height={2048}
                     alt="Urbanly"

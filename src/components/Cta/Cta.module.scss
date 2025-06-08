@@ -6,21 +6,15 @@
 @use "../../styles/config/tools/border" as *;
 @use "../../styles/config/tools/position" as *;
 
-$ctaHeight: 70vh;
+$ctaHeight: 75vh;
 $ctaWidth: 100vw;
 $imgHeight: 100%;
 $imgWidth: 100%;
-$overlayBg: #00000030;
-
-@mixin borderBottomRadius {
-  border-bottom-left-radius: map.get($spacing, "lg");
-  border-bottom-right-radius: map.get($spacing, "lg");
-}
+$overlayBg: #00000050;
 
 .container {
   height: $ctaHeight;
   @include Flex_col-between;
-  @include borderBottomRadius;
 
   &_content {
     position: relative;
@@ -31,7 +25,18 @@ $overlayBg: #00000030;
     gap: map.get($spacing, "lg");
 
     & > h1 {
-      font-family: 'Gambarino-Regular';
+      font-family: map.get($font-family, "heading");
+      color: $background;
+      font-weight: map.get($font-weight, "light");
+      font-size: map.get($font-size, "4xl");
+    }
+
+    & > span {
+      font-family: map.get($font-family, "sans");
+      color: $background;
+      font-weight: map.get($font-weight, "medium");
+      font-size: map.get($font-size, "2xs");
+      text-transform: uppercase;
     }
   }
 
@@ -40,13 +45,11 @@ $overlayBg: #00000030;
     width: $ctaWidth;
     @include Absolute_x;
     z-index: 0;
-    @include borderBottomRadius;
 
     & > img {
       height: $imgHeight;
       width: $imgWidth;
       object-fit: cover;
-      @include borderBottomRadius;
     }
 
     &__overlay {
@@ -54,7 +57,6 @@ $overlayBg: #00000030;
       width: $imgWidth;
       @include Absolute_center;
       background-color: $overlayBg;
-      @include borderBottomRadius;
     }
   }
 }
