@@ -10,18 +10,15 @@ $iconSize: map.get($spacing, "md");
 .container {
   @include Flex_row-center;
   align-items: center;
-  padding: map.get($spacing, "xs") map.get($spacing, "md");
+  padding: map.get($spacing, "2xs") map.get($spacing, "xs");
   background-color: $accent;
-  @include Border;
-  text-transform: capitalize;
   border-radius: map.get($spacing, "lg");
-  cursor: pointer;
   gap: map.get($spacing, "xs");
 
   & > span {
     font-family: map.get($font-family, "sans");
     font-weight: map.get($font-weight, "medium");
-    font-size: map.get($font-size, "xs");
+    font-size: map.get($font-size, "2xs");
   }
 
   & > svg {
@@ -55,6 +52,19 @@ $iconSize: map.get($spacing, "md");
     }
   }
 
+  &_tertiary {
+    background-color: $tertiary;
+    color: $background;
+
+    &:hover {
+      background-color: $tertiary-hover;
+    }
+
+    &:active {
+      background-color: $tertiary-active;
+    }
+  }
+
   &_link {
     background-color: transparent;
     border-color: transparent;
@@ -82,6 +92,14 @@ $iconSize: map.get($spacing, "md");
     &:active {
       background-color: $primary-active;
     }
+  }
+
+  &_blur {
+    background-color: transparent;
+    color: $background;
+    backdrop-filter: blur(map.get($spacing, "2xs"));
+    @include Border;
+    border-color: rgba($border, 0.2);
   }
 }
 

@@ -1,4 +1,5 @@
 import style from './Header.module.scss';
+import {ArrowUpRight} from "lucide-react";
 
 import Logo from "@/components/Logo/Logo";
 import Button from "@/components/Button/Button";
@@ -10,11 +11,12 @@ const Header = () => {
                 <Logo hasBackground={true} />
             </div>
             <div className={style.Container_right}>
-                <Button label="Alugar" variant="link" hasBackground={true}/>
-                <Button label="Comprar" variant="link" hasBackground={true}/>
-                <Button label="Vender" variant="link" hasBackground={true}/>
-                <Button label="Anunciar" variant="link" hasBackground={true}/>
-                <Button label="Entrar" variant="outline" hasBackground={true}/>
+                <Button label="Alugue uma apê" variant="link" hasBackground={true}/>
+                <Button label="Compre um imóvel" variant="link" hasBackground={true}/>
+                <Button label="Anuncie uma venda" variant="link" hasBackground={true}/>
+                <Button label="Entrar" variant="outline" hasBackground={true}>
+                    <ArrowUpRight />
+                </Button>
             </div>
         </header>
     );

@@ -16,7 +16,7 @@
 // --------------------------------------------------
 // Provides neutral background and border colors that define the tone
 // of the UI. Derived accents help add subtle depth to containers.
-$background: #fafafa;
+$background: #fbfbfb;
 $accent: darken($background, 2.5%);
 $accent-active: darken($background, 3.5%);
 $border: darken($background, 5%);
@@ -26,7 +26,7 @@ $white: #ffffff;
 // --------------------------------------------------
 // Represents the main interactive color used in buttons, links, and active
 // states. Variants support hover, active feedback, and soft backgrounds.
-$primary: #00809D;
+$primary: #ad8f53;
 $primary-hover: darken($primary, 5%);
 $primary-active: darken($primary, 10%);
 $primary-light: lighten($primary, 60%);

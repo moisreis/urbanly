@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:color";
 @use "../../styles/config/settings/spacing" as *;
 @use "../../styles/config/settings/color" as *;
 @use "../../styles/config/settings/typography" as *;
@@ -6,11 +7,12 @@
 @use "../../styles/config/tools/border" as *;
 @use "../../styles/config/tools/position" as *;
 
-$ctaHeight: 75vh;
+$ctaHeight: 65vh;
 $ctaWidth: 100vw;
 $imgHeight: 100%;
 $imgWidth: 100%;
-$overlayBg: #00000050;
+$overlayBg: #00000070;
+$headingShadow: 0 0 10px rgba(0, 0, 0, .65);
 
 .container {
   height: $ctaHeight;
@@ -19,24 +21,42 @@ $overlayBg: #00000050;
   &_content {
     position: relative;
     z-index: 10;
-    @include Flex_col-center;
+    @include Flex_col-start;
     align-items: center;
-    height: 100%;
-    gap: map.get($spacing, "lg");
+    height: 65%;
 
     & > h1 {
       font-family: map.get($font-family, "heading");
       color: $background;
       font-weight: map.get($font-weight, "light");
       font-size: map.get($font-size, "4xl");
+      text-shadow: $headingShadow;
     }
 
+    & > h2 {
+      font-family: map.get($font-family, "heading");
+      color: rgba($background, 0.8);
+      font-weight: map.get($font-weight, "light");
+      font-size: map.get($font-size, "lg");
+      text-shadow: $headingShadow;
+    }
+
+    & > form {
+      margin-top: map.get($spacing, "xl");
+    }
     & > span {
       font-family: map.get($font-family, "sans");
-      color: $background;
-      font-weight: map.get($font-weight, "medium");
+      color: rgba($background, 0.8);
+      font-weight: map.get($font-weight, "bold");
       font-size: map.get($font-size, "2xs");
       text-transform: uppercase;
+      @include Absolute_x;
+      bottom: map.get($spacing, "lg");
+    }
+
+    &__form {
+      @include Flex_row-center;
+      gap: map.get($spacing, "xs");
     }
   }
 
@@ -59,4 +79,8 @@ $overlayBg: #00000050;
       background-color: $overlayBg;
     }
   }
+}
+
+.containerWrapper {
+  @include Flex_col-start;
 }
