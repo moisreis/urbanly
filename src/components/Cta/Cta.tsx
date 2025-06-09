@@ -29,7 +29,7 @@ const Cta:React.FC<CtaProps> = ({badgeLabel, ctaTitle, ctaDescription, ctaBottom
                         <Input label="Apartamentos mobiliados, Itaitu" id="search" isLabelVisible={false} size="large">
                             <MapPin/>
                         </Input>
-                        <Button hasBackground={true} variant="primary">
+                        <Button hasBackground={true} variant="primary" isRounded={true}>
                             <Search/>
                         </Button>
                     </form>

@@ -14,9 +14,9 @@ $iconSize: map.get($spacing, "md");
   background-color: $accent;
   @include Border;
   text-transform: capitalize;
-  border-radius: map.get($spacing, "lg");
   cursor: pointer;
   gap: map.get($spacing, "xs");
+  width: fit-content;
 
   & > span {
     font-family: map.get($font-family, "sans");
@@ -75,16 +75,49 @@ $iconSize: map.get($spacing, "md");
     color: $text-body;
 
     &:hover {
-      background-color: $primary-hover;
-      color: $background;
+      background-color: transparent;
+      color: $text-body;
+      border-color: $primary-hover;
     }
 
     &:active {
       background-color: $primary-active;
+      color: $background;
+    }
+  }
+
+  &_accent {
+    background-color: $accent;
+    color: $text-body;
+
+    &:hover {
+      background-color: $accent-hover;
+      border-color: $primary-hover;
+    }
+
+    &:active {
+      background-color: $accent-active;
     }
   }
 }
 
 .hasBackground {
   color: $background !important;
+
+  &:hover {
+    border-color: $background !important;
+  }
+
+  &:active {
+    background-color: transparent !important;
+    color: $background;
+  }
+}
+
+.isRounded {
+  border-radius: map.get($spacing, "lg") !important;
+}
+
+.isFullWidth {
+  width: 100%;
 }

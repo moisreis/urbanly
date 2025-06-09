@@ -13,6 +13,19 @@ export default function Main() {
                 <Card title="Apartamento no Bairro dos Índios" price="R$2.500,00/mês" cardPicture="/images/2d4lAQAlbDA.jpg" />
                 <Card title="Casa na Estação" price="R$2.500,00/mês" cardPicture="/images/tHkJAMcO3QE.jpg" />
             </Section>
+            <Section title="Novidades" buttonLabel="Ver mais" hasSubtitle={true} subtitle="Descubra os imóveis que estão chamando a atenção no mercado. Esta seleção curada apresenta as propriedades mais desejadas disponíveis no momento.">
+                <Card title="Apartamento mobiliado na Serrinha" price="R$2.500,00/mês" cardPicture="/images/mx4mSkK9zeo.jpg" />
+                <Card title="Casa de alto padrão no Leader" price="R$3.500,00/mês" cardPicture="/images/2d4lAQAlbDA.jpg" />
+                <Card title="Apartamento na Matriz" price="R$1.500,00/mês" cardPicture="/images/tHkJAMcO3QE.jpg" />
+                <Card title="Apartamento no Bairro dos Índios" price="R$2.500,00/mês" cardPicture="/images/2d4lAQAlbDA.jpg" />
+            </Section>
+            <Section title="Terrenos à venda" buttonLabel="Ver mais">
+                <Card title="Apartamento mobiliado na Serrinha" price="R$2.500,00/mês" cardPicture="/images/mx4mSkK9zeo.jpg" />
+                <Card title="Casa de alto padrão no Leader" price="R$3.500,00/mês" cardPicture="/images/2d4lAQAlbDA.jpg" />
+                <Card title="Apartamento na Matriz" price="R$1.500,00/mês" cardPicture="/images/tHkJAMcO3QE.jpg" />
+                <Card title="Apartamento no Bairro dos Índios" price="R$2.500,00/mês" cardPicture="/images/2d4lAQAlbDA.jpg" />
+                <Card title="Casa na Estação" price="R$2.500,00/mês" cardPicture="/images/tHkJAMcO3QE.jpg" />
+            </Section>
         </main>
     );
 }

@@ -8,10 +8,15 @@
 
 .container {
   @include Flex_col-start;
+  overflow: hidden;
 
   &:hover {
     text-decoration: underline;
     cursor: pointer;
+
+    & > img {
+opacity: 0.9;
+    }
   }
 
   & > img {

@@ -11,7 +11,9 @@
   width: 90vw;
   margin: auto;
   margin-top: 5vh !important;
+  padding-bottom: 5vh !important;
   gap: map.get($spacing, "xl");
+  @include Border_bottom;
 
   &_header {
     @include Flex_row-between;
@@ -27,5 +29,24 @@
   &_grid {
     @include Grid_5;
     gap: map.get($spacing, "2xl");
+
+    &__header {
+      @include Flex_col-start;
+      gap: map.get($spacing, "lg");
+
+      & > h3 {
+        font-family: map.get($font-family, "heading");
+        font-weight: map.get($font-weight, "bold");
+        font-size: map.get($font-size, "3xl");
+        text-transform: capitalize;
+      }
+
+      & > p {
+        font-family: map.get($font-family, "sans");
+        font-weight: map.get($font-weight, "light");
+        font-size: map.get($font-size, "md");
+        color: $text-muted;
+      }
+    }
   }
 }
