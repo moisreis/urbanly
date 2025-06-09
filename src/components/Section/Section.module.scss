@@ -8,7 +8,7 @@
 
 .container {
   @include Flex_col-start;
-  width: 90vw;
+  width: $width;
   margin: auto;
   margin-top: 5vh !important;
   padding-bottom: 5vh !important;
@@ -19,34 +19,50 @@
     @include Flex_row-between;
 
     & > h2 {
-      font-family: map.get($font-family, "heading");
+      font-family: map.get($font-family, "sans");
       font-weight: map.get($font-weight, "light");
-      font-size: map.get($font-size, "xl");
+      font-size: map.get($font-size, "lg");
       text-transform: capitalize;
     }
   }
 
-  &_grid {
+  &_firstColHeader {
+    @include Flex_col-start;
+    gap: map.get($spacing, "lg");
+
+    & > h3 {
+      font-family: map.get($font-family, "heading");
+      font-weight: map.get($font-weight, "bold");
+      font-size: map.get($font-size, "2xl");
+      text-transform: capitalize;
+    }
+
+    & > p {
+      font-family: map.get($font-family, "sans");
+      font-weight: map.get($font-weight, "normal");
+      font-size: map.get($font-size, "md");
+      color: $text-muted;
+      max-width: map.get($spacing, "4xl") * 3;
+    }
+  }
+
+  &_grid__2 {
+    @include Grid_2;
+    gap: map.get($spacing, "2xl");
+  }
+
+  &_grid__3 {
+    @include Grid_3;
+    gap: map.get($spacing, "2xl");
+  }
+
+  &_grid__4 {
+    @include Grid_4;
+    gap: map.get($spacing, "2xl");
+  }
+
+  &_grid__5 {
     @include Grid_5;
     gap: map.get($spacing, "2xl");
-
-    &__header {
-      @include Flex_col-start;
-      gap: map.get($spacing, "lg");
-
-      & > h3 {
-        font-family: map.get($font-family, "heading");
-        font-weight: map.get($font-weight, "bold");
-        font-size: map.get($font-size, "3xl");
-        text-transform: capitalize;
-      }
-
-      & > p {
-        font-family: map.get($font-family, "sans");
-        font-weight: map.get($font-weight, "light");
-        font-size: map.get($font-size, "md");
-        color: $text-muted;
-      }
-    }
   }
 }

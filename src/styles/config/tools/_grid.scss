@@ -1,3 +1,6 @@
+@use "./mediaQuery" as *;
+
+
 @mixin Grid_1 {
   /* @mixin `Grid_1` */
   display: grid;
@@ -8,64 +11,108 @@
   /* @mixin `Grid_2` */
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  @include media(isOnMobile) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
 @mixin Grid_3 {
   /* @mixin `Grid_3` */
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
+
+  @include media(isOnMobile) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
 @mixin Grid_4 {
   /* @mixin `Grid_4` */
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+
+  @include media(isOnMobile) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
 @mixin Grid_5 {
   /* @mixin `Grid_5` */
   display: grid;
   grid-template-columns: repeat(5, minmax(0, 1fr));
+
+  @include media(isOnMobile) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
 @mixin Grid_6 {
   /* @mixin `Grid_6` */
   display: grid;
   grid-template-columns: repeat(6, minmax(0, 1fr));
+
+  @include media(isOnMobile) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
 @mixin Grid_7 {
   /* @mixin `Grid_7` */
   display: grid;
   grid-template-columns: repeat(7, minmax(0, 1fr));
+
+  @include media(isOnMobile) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
 @mixin Grid_8 {
   /* @mixin `Grid_8` */
   display: grid;
   grid-template-columns: repeat(8, minmax(0, 1fr));
+
+  @include media(isOnMobile) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
 @mixin Grid_9 {
   /* @mixin `Grid_9` */
   display: grid;
   grid-template-columns: repeat(9, minmax(0, 1fr));
+
+  @include media(isOnMobile) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
 @mixin Grid_10 {
   /* @mixin `Grid_10` */
   display: grid;
   grid-template-columns: repeat(10, minmax(0, 1fr));
+
+  @include media(isOnMobile) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
 @mixin Grid_11 {
   /* @mixin `Grid_11` */
   display: grid;
   grid-template-columns: repeat(11, minmax(0, 1fr));
+
+  @include media(isOnMobile) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }
 
 @mixin Grid_12 {
   /* @mixin `Grid_12` */
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
+
+  @include media(isOnMobile) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
 }

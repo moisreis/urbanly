@@ -1,5 +1,6 @@
 import SCSS from "./Section.module.scss";
 import Button from "../Button/Button";
+import style from "@/components/Button/Button.module.scss";
 
 interface SectionProps {
     title: string;
@@ -7,9 +8,11 @@ interface SectionProps {
     buttonLabel?: string;
     hasSubtitle?: boolean;
     subtitle?: string;
+    gridColumns?: number;
 }
 
-const Section: React.FC<SectionProps> = ({title, children, hasSubtitle = false, subtitle, buttonLabel}) => {
+const Section: React.FC<SectionProps> = ({title, children, gridColumns = 5, hasSubtitle = false, subtitle, buttonLabel}) => {
+    const gridClass = SCSS[`container_grid__${gridColumns}`] ?? style.container_grid__5;
     return (
         <section className={SCSS.container}>
             <div className={SCSS.container_header}>
@@ -21,9 +24,9 @@ const Section: React.FC<SectionProps> = ({title, children, hasSubtitle = false, 
                 )}
             </div>
 
-            <div className={SCSS.container_grid}>
+            <div className={gridClass}>
                 {hasSubtitle && (
-                    <div className={SCSS.container_grid__header}>
+                    <div className={SCSS.container_firstColHeader}>
                         <h3>{title}</h3>
                         {subtitle && <p>{subtitle}</p>}
                         {buttonLabel && (

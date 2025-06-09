@@ -14,6 +14,11 @@
 // This foundational unit (4px) enables scalable and consistent spacing increments throughout the UI.
 $base: 4px !default;
 
+// Base width of the app
+// --------------------------------------------------
+// This value oversees the width of the page.
+$width: 90vw !default;
+
 // Spacing scale map: predefined spacing sizes mapped to multiples of the base unit.
 // --------------------------------------------------
 // This map provides a clear and reusable set of spacing tokens from very small (2xs) to very large (3xl).

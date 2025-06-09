@@ -1,0 +1,53 @@
+@use "sass:map";
+@use "../../styles/config/settings/spacing" as *;
+@use "../../styles/config/settings/color" as *;
+@use "../../styles/config/settings/typography" as *;
+@use "../../styles/config/tools/flex" as *;
+@use "../../styles/config/tools/grid" as *;
+@use "../../styles/config/tools/border" as *;
+
+.container {
+  @include Grid_3;
+  overflow: hidden;
+  @include Border;
+
+  &:hover {
+    text-decoration: underline;
+    cursor: pointer;
+
+    & > img {
+      opacity: 0.9;
+    }
+  }
+
+  &_left {
+
+    & > img {
+      object-fit: cover;
+      width: 100%;
+      height: map.get($spacing, "4xl") * 1.5;
+    }
+
+    grid-column: span 1 / span 1;
+
+  }
+
+  &_right {
+    @include Flex_col-center;
+    padding-left: map.get($spacing, "xl");
+    grid-column: span 2 / span 2;
+
+    & > h4 {
+      font-family: map.get($font-family, "sans");
+      font-weight: map.get($font-weight, "normal");
+      font-size: map.get($font-size, "xs");
+    }
+
+    & > h3 {
+      font-family: map.get($font-family, "sans");
+      font-weight: map.get($font-weight, "normal");
+      font-size: map.get($font-size, "xs");
+      color: $text-muted;
+    }
+  }
+}

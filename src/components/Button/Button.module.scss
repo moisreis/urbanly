@@ -20,7 +20,7 @@ $iconSize: map.get($spacing, "md");
 
   & > span {
     font-family: map.get($font-family, "sans");
-    font-weight: map.get($font-weight, "medium");
+    font-weight: map.get($font-weight, "normal");
     font-size: map.get($font-size, "xs");
   }
 

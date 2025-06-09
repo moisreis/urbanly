@@ -26,20 +26,20 @@ $font-size: (
 "4xl": $base * 3
 ) !default;
 
-// Imports the `sans` typeface
-@import "../../../assets/fonts/satoshi/css/satoshi";
-@import "../../../assets/fonts/inter/scss/inter";
-
-// Imports the `serif` typeface
-@import "../../../assets/fonts/gambarino/scss/gambarino";
-@import "../../../assets/fonts/cardo/scss/cardo";
+//// Imports the `sans` typeface
+//@import "../../../assets/fonts/satoshi/css/satoshi";
+//@import "../../../assets/fonts/inter/scss/inter";
+//
+//// Imports the `serif` typeface
+//@import "../../../assets/fonts/gambarino/scss/gambarino";
+//@import "../../../assets/fonts/cardo/scss/cardo";
 
 // Font family map: defines typeface categories.
 // --------------------------------------------------
 // Centralizes choice of fonts for consistency.
 $font-family: (
-        "sans": 'Inter-Variable', // Sans-serif for body text
-        "heading": 'Cardo-Regular' // Serif for headings
+        "sans": 'Inter', // Sans-serif for body text
+        "heading": 'Cardo' // Serif for headings
 ) !default;
 
 // Font weight map: defines semantic weight names.
