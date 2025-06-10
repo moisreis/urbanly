@@ -1,11 +1,9 @@
 import styles from "./Cta.module.scss";
-import {Search, MapPin} from 'lucide-react';
+import {Search} from 'lucide-react';
 
 import Image from 'next/image'
 
 import Header from "../Header/Header";
-import Input from "../Input/Input";
-import Button from "../Button/Button";
 import Badge from "../Badge/Badge";
 
 interface CtaProps {
@@ -24,15 +22,11 @@ const Cta:React.FC<CtaProps> = ({badgeLabel, ctaTitle, ctaDescription, ctaBottom
                 <div className={styles.container_wrapper__content}>
                     <Badge variant="blur" label={badgeLabel} hasBackground={true}/>
                     <h1>{ctaTitle}</h1>
+                    <div className={styles.container_wrapper__fakeInput}>
+                        <Search/>
+                        <span>Félix Thomaz, Jacobina, Bahia</span>
+                    </div>
                     <h2>{ctaDescription}</h2>
-                    <form>
-                        <Input label="Apartamentos mobiliados, Itaitu" id="search" isLabelVisible={false} size="large">
-                            <MapPin/>
-                        </Input>
-                        <Button hasBackground={true} variant="primary" isRounded={true}>
-                            <Search/>
-                        </Button>
-                    </form>
                     <span>{ctaBottomText}</span>
                 </div>
                 <div className={styles.container_wrapper__background}>

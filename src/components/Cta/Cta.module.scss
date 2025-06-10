@@ -42,12 +42,7 @@ $headingShadow: 0 0 10px rgba(0, 0, 0, .65);
         font-weight: map.get($font-weight, "light");
         font-size: map.get($font-size, "lg");
         text-shadow: $headingShadow;
-      }
-
-      & > form {
-        margin-top: map.get($spacing, "xl");
-        @include Flex_row-center;
-        gap: map.get($spacing, "xs");
+        margin-top: map.get($spacing, "md");
       }
 
       & > span {
@@ -78,6 +73,32 @@ $headingShadow: 0 0 10px rgba(0, 0, 0, .65);
         width: $imgWidth;
         @include Absolute_center;
         background-color: $overlayBg;
+      }
+    }
+
+    &__fakeInput {
+      margin-top: map.get($spacing, "md");
+      @include Flex_row-center;
+      border-radius: map.get($spacing, "lg");
+      background-color: $accent;
+      padding: map.get($spacing, "sm") map.get($spacing, "sm") * 6;
+      gap: map.get($spacing, "sm");
+      outline: 1px solid rgba($border, 0.5);
+      outline-offset: 2px;
+
+      & > svg {
+        width: map.get($font-size, "sm");
+        height: map.get($font-size, "sm");
+        stroke: $text-body;
+        position: relative;
+        top: 1px;
+      }
+
+      & > span {
+        font-family: map.get($font-family, "sans");
+        font-weight: map.get($font-weight, "normal");
+        font-size: map.get($font-size, "sm");
+        color: $text-body;
       }
     }
   }

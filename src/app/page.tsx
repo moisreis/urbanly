@@ -2,6 +2,7 @@ import Cta from "../components/Cta/Cta";
 import PropertyCard from "@/components/PropertyCard/PropertyCard";
 import LocationCard from "@/components/LocationCard/LocationCard";
 import Section from "../components/Section/Section";
+import SocialProof from "../components/SocialProof/SocialProof";
 
 export default function Main() {
     return (
@@ -22,6 +23,7 @@ export default function Main() {
             >
                 <PropertyCard title="Apartamento mobiliado na Serrinha" price="R$2.500,00/mês" cardPicture="/images/mx4mSkK9zeo.jpg" />
             </Section>
+            <SocialProof title="O principal mercado para imóveis de luxo e ativos de alto valor." gridColumns={3} />
             <Section title="Terrenos à venda" buttonLabel="Ver mais">
                 <PropertyCard title="Apartamento mobiliado na Serrinha" price="R$2.500,00/mês" cardPicture="/images/mx4mSkK9zeo.jpg" />
                 <PropertyCard title="Casa de alto padrão no Leader" price="R$3.500,00/mês" cardPicture="/images/UhpYKnqZwE8.jpg" />

@@ -11,7 +11,7 @@ const Header = () => {
                 <Logo hasBackground={true} />
             </div>
             <div className={style.Container_right}>
-                <Button label="Alugue uma apê" variant="link" hasBackground={true}/>
+                <Button label="Alugue um apê" variant="link" hasBackground={true}/>
                 <Button label="Compre um imóvel" variant="link" hasBackground={true}/>
                 <Button label="Anuncie uma venda" variant="link" hasBackground={true}/>
                 <Button label="Entrar" variant="outline" hasBackground={true} isRounded={true}>

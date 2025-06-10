@@ -7,34 +7,35 @@
 @use "../../styles/config/tools/border" as *;
 
 .container {
-  @include Flex_col-start;
+  @include Flex_col-center;
+  align-items: center;
   width: $width;
   margin: auto;
   margin-top: 5vh !important;
-  padding-bottom: 5vh !important;
-  gap: map.get($spacing, "xl");
-  @include Border_bottom;
+  padding: map.get($spacing, "3xl") !important;
+  gap: map.get($spacing, "2xl");
+  background-color: $accent;
 
   &_header {
-    @include Flex_row-between;
+    @include Flex_row-center;
 
     & > h2 {
-      font-family: map.get($font-family, "sans");
+      font-family: map.get($font-family, "heading");
       font-weight: map.get($font-weight, "light");
-      font-size: map.get($font-size, "lg");
+      font-size: map.get($font-size, "2xl");
       text-transform: capitalize;
     }
   }
 
-  &_firstColHeader {
+  &_item {
     @include Flex_col-center;
     align-items: center;
-    gap: map.get($spacing, "lg");
+    gap: map.get($spacing, "sm");
 
     & > h3 {
       font-family: map.get($font-family, "heading");
       font-weight: map.get($font-weight, "bold");
-      font-size: map.get($font-size, "2xl");
+      font-size: map.get($font-size, "lg");
       text-transform: capitalize;
       text-align: center;
     }
@@ -42,21 +43,26 @@
     & > p {
       font-family: map.get($font-family, "sans");
       font-weight: map.get($font-weight, "normal");
-      font-size: map.get($font-size, "md");
+      font-size: map.get($font-size, "xs");
       color: $text-muted;
-      max-width: map.get($spacing, "4xl") * 3;
       text-align: center;
     }
+  }
+
+  @mixin isOnTop {
+    align-items: flex-start;
   }
 
   &_grid__2 {
     @include Grid_2;
     gap: map.get($spacing, "2xl");
+    @include isOnTop;
   }
 
   &_grid__3 {
     @include Grid_3;
     gap: map.get($spacing, "2xl");
+    @include isOnTop;
   }
 
   &_grid__4 {

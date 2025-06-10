@@ -1,6 +1,31 @@
 @use "sass:map";
+@use "sass:color";
 @use "../../styles/config/settings/spacing" as *;
+@use "../../styles/config/settings/typography" as *;
+@use "../../styles/config/settings/color" as *;
+@use "../../styles/config/tools/flex" as *;
+@use "../../styles/config/tools/grid" as *;
+@use "../../styles/config/tools/border" as *;
+@use "../../styles/config/tools/position" as *;
 
-.Footer {
-  padding: map.get($spacing, "2xs");
+.container {
+  padding: map.get($spacing, "2xl");
+  background: $primary;
+  @include Border;
+  @include Grid_4;
+  margin: 5vh auto;
+  width: $width;
+
+  &_col {
+    @include Flex_col-start;
+    gap: map.get($spacing, "md");
+
+    & > span {
+      font-family: map.get($font-family, "sans");
+      color: rgba($background, 0.8);
+      font-weight: map.get($font-weight, "bold");
+      font-size: map.get($font-size, "2xs");
+      text-transform: uppercase;
+    }
+  }
 }
