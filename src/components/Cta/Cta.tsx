@@ -20,7 +20,7 @@ const Cta:React.FC<CtaProps> = ({badgeLabel, ctaTitle, ctaDescription, ctaBottom
             <div className={styles.container_wrapper}>
                 <Header/>
                 <div className={styles.container_wrapper__content}>
-                    <Badge variant="blur" label={badgeLabel} hasBackground={true}/>
+                    <Badge variant="blur" label={badgeLabel} hasBackground={true} />
                     <h1>{ctaTitle}</h1>
                     <div className={styles.container_wrapper__fakeInput}>
                         <Search/>
