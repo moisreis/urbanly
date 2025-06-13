@@ -121,3 +121,64 @@ $iconSize: map.get($spacing, "md");
 .isFullWidth {
   width: 100%;
 }
+
+
+/**
+ * @mixin badgeVariant
+ *
+ * Applies background, text color, optional border and hover/active state styles for badges.
+ *
+ * @param {String | Null} $backdrop-filter - CSS blur or other backdrop-filter value (e.g., `blur(4px)`).
+ * @param {Color} $bg-color - Default background color.
+ * @param {Color} $text-color - Default text color.
+ * @param {Color | Null} $border-color - Optional default border color.
+ * @param {Color | Null} $bg-hover-color - Background color on hover.
+ * @param {Color | Null} $border-hover-color - Border color on hover.
+ * @param {Color | Null} $text-hover-color - Text color on hover.
+ * @param {Color | Null} $bg-active-color - Background color on active.
+ * @param {Color | Null} $border-active-color - Border color on active.
+ * @param {Color | Null} $text-active-color - Text color on active.
+ */
+@mixin badgeVariant($backdrop-filter: null, $border-color: null, $bg-color, $text-color, $bg-hover-color, $border-hover-color: null, $text-hover-color: null, $bg-active-color, $border-active-color: null, $text-active-color: null) {
+  background-color: $bg-color;
+  color: $text-color;
+  border-color: $border-color;
+
+  @if $backdrop-filter {
+    backdrop-filter: blur($backdrop-filter);
+  }
+
+  @if $bg-hover-color or $text-hover-color or $border-hover-color {
+    &:hover {
+
+      @if $bg-hover-color {
+        background-color: $bg-hover-color;
+      }
+
+      @if $text-hover-color {
+        color: $text-hover-color;
+      }
+
+      @if $border-hover-color {
+        border-color: $border-hover-color;
+      }
+    }
+  }
+
+  @if $bg-active-color or $text-active-color or $border-active-color {
+    &:active {
+
+      @if $bg-active-color {
+        background-color: $bg-active-color;
+      }
+
+      @if $text-active-color {
+        color: $text-active-color;
+      }
+
+      @if $border-active-color {
+        border-color: $border-active-color;
+      }
+    }
+  }
+}
