@@ -179,7 +179,7 @@ const CtaDescription: React.FC<{ children: React.ReactNode }> = ({children}) => 
  * </Cta.Note>
  */
 const CtaNote: React.FC<{ children: React.ReactNode }> = ({children}) => (
-    <div role="note" className={noteStyles.box}>{children}</div>
+    <span role="note" className={noteStyles.box}>{children}</span>
 );
 
 /**
