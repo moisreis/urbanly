@@ -9,7 +9,7 @@ export default function Main() {
         <main>
             <Cta badgeLabel="+20 anos de experiência" ctaTitle="Explore as melhores propriedades da região"
                  ctaDescription="Clientes satisfeitos em mais de 30 cidades"
-                 ctaBottomText="Explore 700+ casas e apartamentos para venda e aluguel em toda a região"
+                 ctaNote="Explore 700+ casas e apartamentos para venda e aluguel em toda a região"
                  bgImage="/images/UhpYKnqZwE8.jpg"/>
             <Section title="Casas que vai amar" buttonLabel="Ver mais">
                 <PropertyCard title="Apartamento mobiliado na Serrinha" price="R$2.500,00/mês"
