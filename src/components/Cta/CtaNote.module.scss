@@ -7,7 +7,7 @@
 @use "../../styles/config/tools/border" as *;
 @use "../../styles/config/tools/position" as *;
 
-.boxCta_note {
+.box > span {
   font-family: map.get($font-family, "sans");
   color: rgba($background, 0.8);
   font-weight: map.get($font-weight, "bold");

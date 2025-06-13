@@ -8,7 +8,7 @@
 @use "../../styles/config/tools/position" as *;
 @use "./Cta.module" as *;
 
-.boxCta_description {
+.box {
   font-family: map.get($font-family, "heading");
   color: rgba($background, 0.8);
   font-weight: map.get($font-weight, "light");

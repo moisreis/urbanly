@@ -1,16 +1,31 @@
+import {Search, User2} from "lucide-react";
 import Cta from "../components/Cta/Cta"; // Call-to-action section with search and background image
 import PropertyCard from "@/components/PropertyCard/PropertyCard"; // Displays individual property listings with key details
 import LocationCard from "@/components/LocationCard/LocationCard"; // Showcases popular cities or neighborhoods
 import Section from "../components/Section/Section"; // Generic container used to structure page content
-import SocialProof from "../components/SocialProof/SocialProof"; // Displays trust-building content
+import SocialProof from "../components/SocialProof/SocialProof";
+import Button from "@/components/Button/Button"; // Displays trust-building content
 
 export default function Main() {
     return (
         <main>
-            <Cta badgeLabel="+20 anos de experiência" ctaTitle="Explore as melhores propriedades da região"
-                 ctaDescription="Clientes satisfeitos em mais de 30 cidades"
-                 ctaNote="Explore 700+ casas e apartamentos para venda e aluguel em toda a região"
-                 bgImage="/images/UhpYKnqZwE8.jpg"/>
+            <Cta
+                badge="+20 anos de experiência"
+                title="Explore as melhores propriedades da região"
+                description="Clientes satisfeitos em mais de 30 cidades"
+                note="Explore 700+ casas e apartamentos para venda e aluguel em toda a região"
+                background="/images/UhpYKnqZwE8.jpg"
+                placeholder="Matriz, Jacobina, Bahia"
+                icon={<Search/>}
+                navigation={
+                    <>
+                        <Button label="Alugue um apê" variant="link" hasBackground={true}/>
+                        <Button label="Compre um imóvel" variant="link" hasBackground={true}/>
+                        <Button label="Anuncie uma venda" variant="link" hasBackground={true}/>
+                        <Button label="Entrar" variant="outline" hasBackground={true} isRounded={true} icon={<User2/>}/>
+                    </>
+                }
+            />
             <Section title="Casas que vai amar" buttonLabel="Ver mais">
                 <PropertyCard title="Apartamento mobiliado na Serrinha" price="R$2.500,00/mês"
                               cardPicture="/images/mx4mSkK9zeo.jpg"/>

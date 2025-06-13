@@ -14,7 +14,7 @@ $imageWidth: 100%;
 $overlay: #00000070;
 $textShadow: 0 0 10px rgba(0, 0, 0, .65); // Defines the text shadow to improve readability and contrast
 
-.boxCta {
+.box {
   @include Flex_col-start;
 
   &_wrapper {

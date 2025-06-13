@@ -5,7 +5,7 @@
 @use "../../styles/config/tools/flex" as *;
 @use "../../styles/config/tools/border" as *;
 
-.boxCta_header {
+.box {
   padding: map.get($spacing, "md") map.get($spacing, "4xl");
   @include Border_bottom;
   border-color: rgba($border, 0.2);

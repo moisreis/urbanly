@@ -7,7 +7,7 @@
 @use "../../styles/config/tools/border" as *;
 @use "../../styles/config/tools/position" as *;
 
-.boxCtaInputLauncher {
+.box {
   margin-top: map.get($spacing, "md");
   @include Flex_row-center;
   border-radius: map.get($spacing, "lg");
@@ -17,7 +17,7 @@
   outline: 1px solid rgba($border, 0.5);
   outline-offset: 2px;
 
-  & > svg {
+  &_icon > svg {
     width: map.get($font-size, "sm");
     height: map.get($font-size, "sm");
     stroke: $text-body;
