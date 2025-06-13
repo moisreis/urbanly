@@ -25,8 +25,8 @@ const Cta: React.FC<CtaProps> & {
     InputLauncher: typeof CtaInputLauncher;
     Description: typeof CtaDescription;
     Note: typeof CtaNote;
-    Background: typeof CtaBackground;
-} = ({badgeLabel, ctaTitle, ctaDescription, ctaNote, bgImage}) => {
+    // Background: typeof CtaBackground;
+} = ({badgeLabel, ctaTitle, ctaDescription, ctaNote}) => {
     return (
         <section className={ctaStyles.boxCta}>
             <div className={ctaStyles.boxCta_wrapper}>
@@ -43,7 +43,7 @@ const Cta: React.FC<CtaProps> & {
                     <Cta.Description>{ctaDescription}</Cta.Description>
                     <Cta.Note>{ctaNote}</Cta.Note>
                 </div>
-                <Cta.Background bgImage={bgImage}/>
+                {/*<Cta.Background bgImage={bgImage}/>*/}
             </div>
         </section>
     )
@@ -79,18 +79,18 @@ const CtaNote: React.FC<{ children: React.ReactNode }> = ({children}) => (
     <span className={noteStyles.boxCta_note}>{children}</span>
 );
 
-const CtaBackground: React.FC<{ bgImage: string }> = ({bgImage}) => (
-    <div className={backgroundStyles.boxCta_background}>
-        <Image src={bgImage} width={2048} height={2048} alt="Urbanly"/>
-        <div className={backgroundStyles.boxCta_background_overlay}></div>
-    </div>
-);
+// const CtaBackground: React.FC<{ bgImage: string }> = ({bgImage}) => (
+//     <div className={backgroundStyles.boxCta_background}>
+//         <Image src={bgImage} width={2048} height={2048} alt="Urbanly"/>
+//         <div className={backgroundStyles.boxCta_background_overlay}></div>
+//     </div>
+// );
 
 Cta.Header = CtaHeader;
 Cta.Title = CtaTitle;
 Cta.InputLauncher = CtaInputLauncher;
 Cta.Description = CtaDescription;
 Cta.Note = CtaNote;
-Cta.Background = CtaBackground;
+// Cta.Background = CtaBackground;
 
 export default Cta;
