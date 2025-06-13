@@ -8,8 +8,8 @@ import backgroundStyles from "./CtaBackground.module.scss"; // Styles for backgr
 import inputLauncherStyles from "./CtaInputLauncher.module.scss"; // add comment here chatgpt
 import {Search, User2} from 'lucide-react'; // Lucide icon used for visual input indicator
 import Badge from "../Badge/Badge";
-import Logo from "@/components/Logo/Logo";
-import Button from "@/components/Button/Button";
+import Logo from "../Logo/Logo";
+import Button from "../Button/Button";
 
 interface CtaProps {
     badgeLabel: string;
