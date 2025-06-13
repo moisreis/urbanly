@@ -1,0 +1,31 @@
+@use "sass:map";
+@use "sass:color";
+@use "../../styles/config/settings/spacing" as *;
+@use "../../styles/config/settings/color" as *;
+@use "../../styles/config/tools/flex" as *;
+@use "../../styles/config/tools/border" as *;
+
+.boxCta_header {
+  padding: map.get($spacing, "md") map.get($spacing, "4xl");
+  @include Border_bottom;
+  border-color: rgba($border, 0.2);
+  @include Flex_row-between;
+  z-index: 10;
+
+  &_left {
+    @include Flex_row-start;
+    width: 100%;
+  }
+
+  &_center {
+    @include Flex_row-center;
+    width: 100%;
+    gap: map.get($spacing, "xs");
+  }
+
+  &_right {
+    @include Flex_row-end;
+    width: 100%;
+    gap: map.get($spacing, "xs");
+  }
+}

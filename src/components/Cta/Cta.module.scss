@@ -7,18 +7,18 @@
 @use "../../styles/config/tools/border" as *;
 @use "../../styles/config/tools/position" as *;
 
-$ctaHeight: 65vh;
-$ctaWidth: 100vw;
-$imgHeight: 100%;
-$imgWidth: 100%;
-$overlayBg: #00000070;
-$headingShadow: 0 0 10px rgba(0, 0, 0, .65);
+$wrapperHeight: 65vh;
+$wrapperWidth: 100vw;
+$imageHeight: 100%;
+$imageWidth: 100%;
+$overlay: #00000070;
+$textShadow: 0 0 10px rgba(0, 0, 0, .65); // Defines the text shadow to improve readability and contrast
 
-.container {
+.boxCta {
   @include Flex_col-start;
 
   &_wrapper {
-    height: $ctaHeight;
+    height: $wrapperHeight;
     @include Flex_col-between;
 
     &__content {
@@ -27,79 +27,6 @@ $headingShadow: 0 0 10px rgba(0, 0, 0, .65);
       @include Flex_col-start;
       align-items: center;
       height: 65%;
-
-      & > h1 {
-        font-family: map.get($font-family, "heading");
-        color: $background;
-        font-weight: map.get($font-weight, "light");
-        font-size: map.get($font-size, "4xl");
-        text-shadow: $headingShadow;
-      }
-
-      & > h2 {
-        font-family: map.get($font-family, "heading");
-        color: rgba($background, 0.8);
-        font-weight: map.get($font-weight, "light");
-        font-size: map.get($font-size, "lg");
-        text-shadow: $headingShadow;
-        margin-top: map.get($spacing, "md");
-      }
-
-      & > span {
-        font-family: map.get($font-family, "sans");
-        color: rgba($background, 0.8);
-        font-weight: map.get($font-weight, "bold");
-        font-size: map.get($font-size, "2xs");
-        text-transform: uppercase;
-        @include Absolute_x;
-        bottom: map.get($spacing, "lg");
-      }
-    }
-
-    &__background {
-      height: $ctaHeight;
-      width: $ctaWidth;
-      @include Absolute_x;
-      z-index: 0;
-
-      & > img {
-        height: $imgHeight;
-        width: $imgWidth;
-        object-fit: cover;
-      }
-
-      &__overlay {
-        height: $imgHeight;
-        width: $imgWidth;
-        @include Absolute_center;
-        background-color: $overlayBg;
-      }
-    }
-
-    &__fakeInput {
-      margin-top: map.get($spacing, "md");
-      @include Flex_row-center;
-      border-radius: map.get($spacing, "lg");
-      background-color: $accent;
-      padding: map.get($spacing, "sm") map.get($spacing, "sm") * 6;
-      gap: map.get($spacing, "sm");
-      outline: 1px solid rgba($border, 0.5);
-      outline-offset: 2px;
-
-      & > svg {
-        width: map.get($font-size, "sm");
-        height: map.get($font-size, "sm");
-        stroke: $text-body;
-        position: relative;
-        top: 1px;
-      }
-
-      & > span {
-        font-family: map.get($font-family, "sans");
-        font-weight: map.get($font-weight, "normal");
-        font-size: map.get($font-size, "sm");
-        color: $text-body;
-      }
     }
   }
 }

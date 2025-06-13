@@ -1,0 +1,18 @@
+@use "sass:map";
+@use "sass:color";
+@use "../../styles/config/settings/spacing" as *;
+@use "../../styles/config/settings/color" as *;
+@use "../../styles/config/settings/typography" as *;
+@use "../../styles/config/tools/flex" as *;
+@use "../../styles/config/tools/border" as *;
+@use "../../styles/config/tools/position" as *;
+
+.boxCta_note {
+  font-family: map.get($font-family, "sans");
+  color: rgba($background, 0.8);
+  font-weight: map.get($font-weight, "bold");
+  font-size: map.get($font-size, "2xs");
+  text-transform: uppercase;
+  @include Absolute_x;
+  bottom: map.get($spacing, "lg");
+}

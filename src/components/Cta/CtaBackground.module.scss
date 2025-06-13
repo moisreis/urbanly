@@ -1,0 +1,29 @@
+@use "sass:map";
+@use "sass:color";
+@use "../../styles/config/settings/spacing" as *;
+@use "../../styles/config/settings/color" as *;
+@use "../../styles/config/settings/typography" as *;
+@use "../../styles/config/tools/flex" as *;
+@use "../../styles/config/tools/border" as *;
+@use "../../styles/config/tools/position" as *;
+@use "./Cta.module" as *;
+
+.boxCta_background {
+  height: $wrapperHeight;
+  width: $wrapperWidth;
+  @include Absolute_x;
+  z-index: 0;
+
+  & > img {
+    height: $imageHeight;
+    width: $imageWidth;
+    object-fit: cover;
+  }
+
+  &_overlay {
+    height: $imageHeight;
+    width: $imageWidth;
+    @include Absolute_center;
+    background-color: $overlay;
+  }
+}

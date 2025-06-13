@@ -1,0 +1,18 @@
+@use "sass:map";
+@use "sass:color";
+@use "../../styles/config/settings/spacing" as *;
+@use "../../styles/config/settings/color" as *;
+@use "../../styles/config/settings/typography" as *;
+@use "../../styles/config/tools/flex" as *;
+@use "../../styles/config/tools/border" as *;
+@use "../../styles/config/tools/position" as *;
+@use "./Cta.module" as *;
+
+.boxCta_description {
+  font-family: map.get($font-family, "heading");
+  color: rgba($background, 0.8);
+  font-weight: map.get($font-weight, "light");
+  font-size: map.get($font-size, "lg");
+  text-shadow: $textShadow;
+  margin-top: map.get($spacing, "md");
+}
