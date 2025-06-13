@@ -5,6 +5,7 @@
 @use "../../styles/config/tools/flex" as *;
 @use "../../styles/config/tools/border" as *;
 
+// Base icon size for the button
 $iconSize: map.get($spacing, "md");
 
 .mod {
@@ -18,146 +19,186 @@ $iconSize: map.get($spacing, "md");
   gap: map.get($spacing, "xs");
   width: fit-content;
 
+  // Handles the label in the button
   & > span {
     font-family: map.get($font-family, "sans");
     font-weight: map.get($font-weight, "normal");
     font-size: map.get($font-size, "xs");
   }
 
-  & > svg {
+  // Handles the icon sizing and position
+  &_icon > svg {
     width: $iconSize;
     height: $iconSize;
   }
 
+  /**
+   * @mixin buttonVariant
+   *
+   * Applies a full styling system for button variants, including base, hover, and active states.
+   * Accepts optional parameters for fine-grained control over background, text, and border colors.
+   * Designed for use in non-interactive and interactive buttons across themes and surfaces.
+   *
+   * Parameters:
+   * @param {Color | null} $border-color - Border color in default state (optional).
+   * @param {Color} $bg-color - Background color in default state.
+   * @param {Color} $text-color - Text color in default state.
+   * @param {Color | null} $bg-color-hover - Background color on hover (optional).
+   * @param {Color | null} $text-color-hover - Text color on hover (optional).
+   * @param {Color | null} $border-color-hover - Border color on hover (optional).
+   * @param {Color | null} $bg-color-active - Background color on active (optional).
+   * @param {Color | null} $text-color-active - Text color on active (optional).
+   * @param {Color | null} $border-color-active - Border color on active (optional).
+   *
+   * Usage example:
+   * &_primary {
+   *   @include buttonVariant(
+   *     null, // border-color
+   *     $primary, // background-color
+   *     $background, // color
+   *     $primary-hover, // hover: background-color
+   *     null, // hover: color
+   *     null, // hover: border-color
+   *     $primary-hover, // active: background-color
+   *     null, // active: border-color
+   *   );
+   * }
+   */
+  @mixin buttonVariant($border-color: null, $bg-color, $text-color, $bg-color-hover: null, $text-color-hover: null, $border-color-hover: null, $bg-color-active: null, $text-color-active: null, $border-color-active: null) {
+    background-color: $bg-color;
+    color: $text-color;
+    border-color: $border-color;
+
+    @if $bg-color-hover or $text-color-hover or $border-color-hover {
+
+      @if $bg-color-hover {
+        &:hover {
+          background-color: $bg-color-hover;
+        }
+      }
+
+      @if $text-color-hover {
+        &:hover {
+          color: $text-color-hover;
+        }
+      }
+
+      @if $border-color-hover {
+        &:hover {
+          border-color: $border-color-hover;
+        }
+      }
+    }
+
+    @if $bg-color-active or $text-color-active or $border-color-active {
+
+      @if $bg-color-active {
+        &:active {
+          background-color: $bg-color-active;
+        }
+      }
+
+      @if $text-color-active {
+        &:active {
+          color: $text-color-active;
+        }
+      }
+
+      @if $border-color-active {
+        &:active {
+          border-color: $border-color-active;
+        }
+      }
+    }
+  }
+
+  // Primary: Used for high-emphasis actions like form submissions or primary CTAs.
   &_primary {
-    background-color: $primary;
-    color: $background;
-
-    &:hover {
-      background-color: $primary-hover;
-    }
-
-    &:active {
-      background-color: $primary-active;
-    }
+    @include buttonVariant(
+                    null, // border-color
+                    $primary, // background-color
+                    $background, // color
+                    $primary-hover, // hover: background-color
+                    null, // hover: color
+                    null, // hover: border-color
+                    $primary-active, // active: background-color
+                    null, // active: color
+                    null, // active: border-color
+    );
   }
 
+  // Secondary: Used for lower-emphasis actions that still require visibility.
   &_secondary {
-    background-color: $secondary;
-    color: $background;
-
-    &:hover {
-      background-color: $secondary-hover;
-    }
-
-    &:active {
-      background-color: $secondary-active;
-    }
+    @include buttonVariant(
+                    null, // border-color
+                    $secondary, // background-color
+                    $background, // color
+                    $secondary-hover, // hover: background-color
+                    null, // hover: color
+                    null, // hover: border-color
+                    $secondary-active, // active: background-color
+                    null, // active: color
+                    null, // active: border-color
+    );
   }
 
+  // Tertiary: Used for minimal visual weight actions or passive states.
+  &_tertiary {
+    @include buttonVariant(
+                    null, // border-color
+                    $tertiary, // background-color
+                    $background, // color
+                    $tertiary-hover, // hover: background-color
+                    null, // hover: color
+                    null, // hover: border-color
+                    $tertiary-active, // active: background-color
+                    null, // active: color
+                    null, // active: border-color
+    );
+  }
+
+  // Link: Used for inline actions styled as hyperlinks, minimal button chrome.
   &_link {
-    background-color: transparent;
-    border-color: transparent;
-
-    &:hover {
-      background-color: transparent;
-      text-underline-offset: map.get($spacing, "2xs");
-      border-color: $border;
-    }
-
-    &:active {
-      background-color: transparent;
-    }
+    @include buttonVariant(
+                    transparent, // border-color
+                    transparent, // background-color
+                    $text-body, // color
+                    transparent, // hover: background-color
+                    null, // hover: color
+                    $border, // hover: border-color
+                    transparent, // active: background-color
+                    null, // active: color
+                    null, // active: border-color
+    );
   }
 
+  // Outline: Used for neutral or bordered buttons with hover/active transitions.
   &_outline {
-    background-color: transparent;
-    color: $text-body;
-
-    &:hover {
-      background-color: transparent;
-      color: $text-body;
-      border-color: $primary-hover;
-    }
-
-    &:active {
-      background-color: $primary-active;
-      color: $background;
-    }
+    @include buttonVariant(
+                    null, // border-color
+                    transparent, // background-color
+                    $text-body, // color
+                    transparent, // hover: background-color
+                    null, // hover: color
+                    $primary-hover, // hover: border-color
+                    transparent, // active: background-color
+                    $background, // active: color
+                    $primary-active, // active: border-color
+    );
   }
 
+  // Accent: Used to highlight special actions with brand-accented visual tone.
   &_accent {
-    background-color: $accent;
-    color: $text-body;
-
-    &:hover {
-      background-color: $accent-hover;
-      border-color: $primary-hover;
-    }
-
-    &:active {
-      background-color: $accent-active;
-    }
-  }
-}
-
-
-/**
- * @mixin badgeVariant
- *
- * Applies background, text color, optional border and hover/active state styles for badges.
- *
- * @param {String | Null} $backdrop-filter - CSS blur or other backdrop-filter value (e.g., `blur(4px)`).
- * @param {Color} $bg-color - Default background color.
- * @param {Color} $text-color - Default text color.
- * @param {Color | Null} $border-color - Optional default border color.
- * @param {Color | Null} $bg-hover-color - Background color on hover.
- * @param {Color | Null} $border-hover-color - Border color on hover.
- * @param {Color | Null} $text-hover-color - Text color on hover.
- * @param {Color | Null} $bg-active-color - Background color on active.
- * @param {Color | Null} $border-active-color - Border color on active.
- * @param {Color | Null} $text-active-color - Text color on active.
- */
-@mixin badgeVariant($backdrop-filter: null, $border-color: null, $bg-color, $text-color, $bg-hover-color, $border-hover-color: null, $text-hover-color: null, $bg-active-color, $border-active-color: null, $text-active-color: null) {
-  background-color: $bg-color;
-  color: $text-color;
-  border-color: $border-color;
-
-  @if $backdrop-filter {
-    backdrop-filter: blur($backdrop-filter);
-  }
-
-  @if $bg-hover-color or $text-hover-color or $border-hover-color {
-    &:hover {
-
-      @if $bg-hover-color {
-        background-color: $bg-hover-color;
-      }
-
-      @if $text-hover-color {
-        color: $text-hover-color;
-      }
-
-      @if $border-hover-color {
-        border-color: $border-hover-color;
-      }
-    }
-  }
-
-  @if $bg-active-color or $text-active-color or $border-active-color {
-    &:active {
-
-      @if $bg-active-color {
-        background-color: $bg-active-color;
-      }
-
-      @if $text-active-color {
-        color: $text-active-color;
-      }
-
-      @if $border-active-color {
-        border-color: $border-active-color;
-      }
-    }
+    @include buttonVariant(
+                    null, // border-color
+                    $accent, // background-color
+                    $text-body, // color
+                    $accent-hover, // hover: background-color
+                    null, // hover: color
+                    $primary-hover, // hover: border-color
+                    $accent-active, // active: background-color
+                    null, // active: color
+                    null, // active: border-color
+    );
   }
 }

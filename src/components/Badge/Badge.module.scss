@@ -54,7 +54,6 @@ $iconSize: map.get($spacing, "md");
    *   );
    * }
    */
-
   @mixin badgeVariant($backdrop-filter: null, $border-color: null, $bg-color, $text-color) {
     background-color: $bg-color;
     color: $text-color;

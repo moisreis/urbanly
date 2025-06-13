@@ -5,6 +5,7 @@
 @use "../../styles/config/tools/flex" as *;
 @use "../../styles/config/tools/border" as *;
 
+// Enforces high-contrast text and border color for readability
 .hasBackground {
   color: $background !important;
 
@@ -18,10 +19,12 @@
   }
 }
 
+// Enforces a rounded style for buttons that need a border-radius
 .isRounded {
   border-radius: map.get($spacing, "lg") !important;
 }
 
+// Enforces a full width button for mobile experience and modals
 .isFullWidth {
   width: 100%;
 }

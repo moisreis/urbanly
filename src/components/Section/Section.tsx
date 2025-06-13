@@ -19,7 +19,7 @@ const Section: React.FC<SectionProps> = ({title, children, gridColumns = 5, hasS
                 {!hasSubtitle && (
                     <>
                         <h2>{title}</h2>
-                        {buttonLabel && ( <Button variant="outline" hasBackground={false} label={buttonLabel}/> )}
+                        {buttonLabel && ( <Button variant="primary" hasBackground={false} label={buttonLabel}/> )}
                     </>
                 )}
             </div>
@@ -30,7 +30,7 @@ const Section: React.FC<SectionProps> = ({title, children, gridColumns = 5, hasS
                         <h3>{title}</h3>
                         {subtitle && <p>{subtitle}</p>}
                         {buttonLabel && (
-                            <Button variant="accent" hasBackground={false} label={buttonLabel}/>
+                            <Button variant="outline" hasBackground={false} label={buttonLabel}/>
                         )}
                     </div>
                 )}
