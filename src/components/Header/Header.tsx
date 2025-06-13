@@ -14,9 +14,7 @@ const Header = () => {
                 <Button label="Alugue um apê" variant="link" hasBackground={true}/>
                 <Button label="Compre um imóvel" variant="link" hasBackground={true}/>
                 <Button label="Anuncie uma venda" variant="link" hasBackground={true}/>
-                <Button label="Entrar" variant="outline" hasBackground={true} isRounded={true}>
-                    <User2 />
-                </Button>
+                <Button label="Entrar" variant="outline" hasBackground={true} isRounded={true} icon={<User2 />} />
             </div>
         </header>
     );

@@ -7,7 +7,7 @@
 
 $iconSize: map.get($spacing, "md");
 
-.container {
+.mod {
   @include Flex_row-center;
   align-items: center;
   padding: map.get($spacing, "xs") map.get($spacing, "md");
@@ -99,27 +99,6 @@ $iconSize: map.get($spacing, "md");
       background-color: $accent-active;
     }
   }
-}
-
-.hasBackground {
-  color: $background !important;
-
-  &:hover {
-    border-color: $background !important;
-  }
-
-  &:active {
-    background-color: transparent !important;
-    color: $background;
-  }
-}
-
-.isRounded {
-  border-radius: map.get($spacing, "lg") !important;
-}
-
-.isFullWidth {
-  width: 100%;
 }
 
 

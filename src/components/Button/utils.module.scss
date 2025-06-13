@@ -1,0 +1,27 @@
+@use "sass:map";
+@use "../../styles/config/settings/spacing" as *;
+@use "../../styles/config/settings/color" as *;
+@use "../../styles/config/settings/typography" as *;
+@use "../../styles/config/tools/flex" as *;
+@use "../../styles/config/tools/border" as *;
+
+.hasBackground {
+  color: $background !important;
+
+  &:hover {
+    border-color: $background !important;
+  }
+
+  &:active {
+    background-color: transparent !important;
+    color: $background;
+  }
+}
+
+.isRounded {
+  border-radius: map.get($spacing, "lg") !important;
+}
+
+.isFullWidth {
+  width: 100%;
+}

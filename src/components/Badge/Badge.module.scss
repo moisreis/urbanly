@@ -114,4 +114,14 @@ $iconSize: map.get($spacing, "md");
                     $text-body, // color
     );
   }
+
+  // Accent: Used for badges highlighting accentuated or alerting information.
+  &_accent {
+    @include badgeVariant(
+                    null, // background-filter
+                    $border, // border-color
+                    $accent, // background-color
+                    $text-body, // color
+    );
+  }
 }
