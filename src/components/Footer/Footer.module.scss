@@ -8,7 +8,7 @@
 @use "../../styles/config/tools/border" as *;
 @use "../../styles/config/tools/position" as *;
 
-.container {
+.lyt {
   padding: map.get($spacing, "2xl");
   background: $primary;
   @include Border;
