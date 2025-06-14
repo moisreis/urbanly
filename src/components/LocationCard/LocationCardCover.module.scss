@@ -7,16 +7,12 @@
 @use "../../styles/config/tools/border" as *;
 
 .box {
-  @include Grid_3;
-  overflow: hidden;
-  @include Border;
 
-  &:hover {
-    text-decoration: underline;
-    cursor: pointer;
-
-    & > img {
-      opacity: 0.9;
-    }
+  & > img {
+    object-fit: cover;
+    width: 100%;
+    height: map.get($spacing, "4xl") * 1.5;
   }
+
+  grid-column: span 1 / span 1;
 }

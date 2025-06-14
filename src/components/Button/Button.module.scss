@@ -11,7 +11,7 @@ $iconSize: map.get($spacing, "md");
 .mod {
   @include Flex_row-center;
   align-items: center;
-  padding: map.get($spacing, "xs") map.get($spacing, "md");
+  padding: map.get($spacing, "xs") map.get($spacing, "xs") * 2;
   background-color: $accent;
   @include Border;
   text-transform: capitalize;

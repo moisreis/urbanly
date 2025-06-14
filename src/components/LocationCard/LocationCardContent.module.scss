@@ -1,0 +1,26 @@
+@use "sass:map";
+@use "../../styles/config/settings/spacing" as *;
+@use "../../styles/config/settings/color" as *;
+@use "../../styles/config/settings/typography" as *;
+@use "../../styles/config/tools/flex" as *;
+@use "../../styles/config/tools/grid" as *;
+@use "../../styles/config/tools/border" as *;
+
+.box {
+  @include Flex_col-center;
+  padding-left: map.get($spacing, "xl");
+  grid-column: span 2 / span 2;
+
+  & > h4 {
+    font-family: map.get($font-family, "sans");
+    font-weight: map.get($font-weight, "normal");
+    font-size: map.get($font-size, "xs");
+  }
+
+  & > h3 {
+    font-family: map.get($font-family, "sans");
+    font-weight: map.get($font-weight, "normal");
+    font-size: map.get($font-size, "xs");
+    color: $text-muted;
+  }
+}

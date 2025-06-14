@@ -12,11 +12,11 @@
   @include Flex_col-start;
   gap: map.get($spacing, "xs");
 
-  & > span {
+  & > h4 {
     font-family: map.get($font-family, "sans");
     color: $text-body;
     font-weight: map.get($font-weight, "medium");
-    font-size: map.get($font-size, "xs");
+    font-size: map.get($font-size, "md");
     margin-bottom: map.get($spacing, "xs");
   }
 }

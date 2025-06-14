@@ -68,12 +68,12 @@ export default function Main() {
                               cardPicture="/images/2d4lAQAlbDA.jpg"/>
             </Section>
             <Section title="Pesquisas populares" buttonLabel="Ver todas" gridColumns={3}>
-                <LocationCard location="Félix Thomaz" quantity="45" cardPicture="/images/mx4mSkK9zeo.jpg"/>
-                <LocationCard location="Leader" quantity="453" cardPicture="/images/UhpYKnqZwE8.jpg"/>
-                <LocationCard location="Mundo Novo" quantity="298" cardPicture="/images/xtDpXi_a-YQ.jpg"/>
-                <LocationCard location="Bairro dos Índios" quantity="12" cardPicture="/images/2d4lAQAlbDA.jpg"/>
-                <LocationCard location="Inocoop" quantity="12" cardPicture="/images/2d4lAQAlbDA.jpg"/>
-                <LocationCard location="Itaitu" quantity="12" cardPicture="/images/2d4lAQAlbDA.jpg"/>
+                <LocationCard location="Félix Thomaz" quantity="45" cover="/images/mx4mSkK9zeo.jpg"/>
+                <LocationCard location="Leader" quantity="453" cover="/images/UhpYKnqZwE8.jpg"/>
+                <LocationCard location="Mundo Novo" quantity="298" cover="/images/xtDpXi_a-YQ.jpg"/>
+                <LocationCard location="Bairro dos Índios" quantity="12" cover="/images/2d4lAQAlbDA.jpg"/>
+                <LocationCard location="Inocoop" quantity="12" cover="/images/2d4lAQAlbDA.jpg"/>
+                <LocationCard location="Itaitu" quantity="12" cover="/images/2d4lAQAlbDA.jpg"/>
             </Section>
         </main>
     );

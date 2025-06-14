@@ -1,7 +1,7 @@
 import type {Metadata} from "next"; // Types for Next.js metadata configuration
 import "./globals.scss"; // Global SCSS styles with resets, variables, and base elements
-import {Footer} from "../components/Footer/Footer"; // Global Footer component
-import Button from "../components/Button/Button";
+import {Footer} from "@/components/Footer/Footer"; // Global Footer component
+import Button from "@/components/Button/Button";
 import {Inter, Cardo} from 'next/font/google' // Google Fonts loaded via Next.js (Inter and Cardo)
 
 /**
@@ -49,39 +49,36 @@ export default function RootLayout({
                         label="Urbanly"
                         links={
                             <>
-                                <Button label="Sobre nós" variant="link" hasNoPadding />
-                                <Button label="Contato" variant="link" hasNoPadding />
-                                <Button label="Carreiras" variant="link" hasNoPadding />
-                                <Button label="Imprensa" variant="link" hasNoPadding />
+                                <Button label="Sobre nós" variant="link" hasNoPadding/>
+                                <Button label="Contato" variant="link" hasNoPadding/>
+                                <Button label="Carreiras" variant="link" hasNoPadding/>
+                                <Button label="Imprensa" variant="link" hasNoPadding/>
                             </>
                         }
                     />
-
                     <Footer.Col
                         label="Catálogo"
                         links={
                             <>
-                                <Button label="Félix Thomas" variant="link" hasNoPadding />
-                                <Button label="Jacobina II" variant="link" hasNoPadding />
-                                <Button label="Jacobina III" variant="link" hasNoPadding />
-                                <Button label="Leader" variant="link" hasNoPadding />
-                                <Button label="Inocoop" variant="link" hasNoPadding />
+                                <Button label="Félix Thomas" variant="link" hasNoPadding/>
+                                <Button label="Jacobina II" variant="link" hasNoPadding/>
+                                <Button label="Jacobina III" variant="link" hasNoPadding/>
+                                <Button label="Leader" variant="link" hasNoPadding/>
+                                <Button label="Inocoop" variant="link" hasNoPadding/>
                             </>
                         }
                     />
-
                     <Footer.Col
                         label="Suporte"
                         links={
                             <>
-                                <Button label="Central de Ajuda" variant="link" hasNoPadding />
-                                <Button label="FAQ" variant="link" hasNoPadding />
-                                <Button label="Política de Privacidade" variant="link" hasNoPadding />
-                                <Button label="Termos de Uso" variant="link" hasNoPadding />
+                                <Button label="Central de Ajuda" variant="link" hasNoPadding/>
+                                <Button label="FAQ" variant="link" hasNoPadding/>
+                                <Button label="Política de Privacidade" variant="link" hasNoPadding/>
+                                <Button label="Termos de Uso" variant="link" hasNoPadding/>
                             </>
                         }
                     />
-
                     <Footer.Col
                         label="Conecte-se"
                         links={
