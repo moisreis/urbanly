@@ -9,8 +9,14 @@
 @use "../../styles/config/tools/position" as *;
 
 .lyt {
-  padding: map.get($spacing, "4xl");
-  background: $accent;
-  @include Grid_7;
-  width: 100vw;
+  @include Flex_col-start;
+  gap: map.get($spacing, "xs");
+
+  & > span {
+    font-family: map.get($font-family, "sans");
+    color: $text-body;
+    font-weight: map.get($font-weight, "medium");
+    font-size: map.get($font-size, "xs");
+    margin-bottom: map.get($spacing, "xs");
+  }
 }

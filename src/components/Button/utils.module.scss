@@ -28,3 +28,8 @@
 .isFullWidth {
   width: 100%;
 }
+
+// Enforces a button that has no padding
+.hasNoPadding {
+  padding: 0 !important;
+}
