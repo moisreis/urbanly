@@ -1,0 +1,6 @@
+@use "../../styles/config/settings/color" as *;
+
+// Enforces a filter that makes the logo white over images or backgrounds
+.hasBackground {
+  filter: brightness(0) invert(1);
+}

@@ -3,7 +3,7 @@
 @use "../../styles/config/settings/color" as *;
 @use "../../styles/config/tools/flex" as *;
 
-.Container {
+.mod {
   width: map.get($spacing, "xl");
   height: map.get($spacing, "xl");
 
@@ -18,8 +18,4 @@
       transition-duration: 350ms;
     }
   }
-}
-
-.hasBackground {
-  filter: brightness(0) invert(1);
 }
