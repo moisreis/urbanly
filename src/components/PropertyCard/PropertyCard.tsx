@@ -1,26 +1,44 @@
-import SCSS from "./PropertyCard.module.scss";
-import Image from 'next/image'
+import styles from "./PropertyCard.module.scss"; // Styles specific to the PropertyCard component layout and design
+import Image from 'next/image';  // Next.js optimized Image component for automatic image resizing and performance
 
 interface PropertyCardProps {
     title: string;
     price: string;
-    cardPicture: string;
+    cover: string;
 }
 
-const PropertyCard: React.FC<PropertyCardProps> = ({title, price, cardPicture}) => {
-    console.log('Renderizando: MeuComponente');
+/**
+ * @name PropertyCard
+ * @author Moisés Reis
+ *
+ * @description
+ * A card component to display a property listing with its cover image, price, and title.
+ * Designed to showcase real estate properties in a clear and professional format.
+ *
+ * @param title - The title or name of the property
+ * @param price - The price of the property, formatted as a string
+ * @param cover - The URL or path of the cover image representing the property
+ *
+ * @example
+ * <PropertyCard
+ *   title="Apartamento na Vila Feliz"
+ *   price="R$350,000"
+ *   cover="/images/property1.jpg"
+ * />
+ */
+const PropertyCard: React.FC<PropertyCardProps> = ({ title, price, cover }) => {
     return (
-        <div className={SCSS.container}>
+        <div className={styles.box}>
             <Image
-                src={cardPicture}
+                src={cover}
                 width={2048}
                 height={2048}
                 alt={title}
             />
-            <h4>{price}</h4>
-            <h3>{title}</h3>
+            <h3>{price}</h3>
+            <h4>{title}</h4>
         </div>
-    )
-}
+    );
+};
 
 export default PropertyCard;

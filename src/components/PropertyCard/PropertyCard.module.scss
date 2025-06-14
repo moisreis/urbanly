@@ -6,7 +6,7 @@
 @use "../../styles/config/tools/grid" as *;
 @use "../../styles/config/tools/border" as *;
 
-.container {
+.box {
   @include Flex_col-start;
   overflow: hidden;
 
@@ -26,13 +26,13 @@
     margin-bottom: map.get($spacing, "sm");
   }
 
-  & > h4 {
+  & > h3 {
     font-family: map.get($font-family, "sans");
     font-weight: map.get($font-weight, "normal");
     font-size: map.get($font-size, "xs");
   }
 
-  & > h3 {
+  & > h4 {
     font-family: map.get($font-family, "sans");
     font-weight: map.get($font-weight, "normal");
     font-size: map.get($font-size, "xs");
