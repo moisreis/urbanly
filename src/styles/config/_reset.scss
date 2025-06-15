@@ -14,41 +14,28 @@
 @use "../../styles/config/settings/color" as *;
 @use "../../styles/config/settings/typography" as *;
 
-// ==================================================
-// ⚙️ RESET: BOX-SIZING SETUP
-// --------------------------------------------------
-// Apply border-box sizing to all elements and their pseudo-elements
-// to include padding and borders within the element's total width and height.
-// This approach ensures consistent box models across all browsers,
-// simplifying layout calculations and avoiding unexpected element sizes.
-// ==================================================
+/// @name Box Sizing Reset
+/// @description Applies `border-box` sizing to all elements and pseudo-elements
+/// to ensure padding and border are included within total dimensions.
+/// This simplifies layout logic and provides a more predictable box model.
 *,
 *::before,
 *::after {
   box-sizing: border-box;
 }
 
-// ==================================================
-// 🧹 RESET: REMOVE DEFAULT MARGIN AND PADDING
-// --------------------------------------------------
-// Remove all default margin and padding from all elements.
-// This is the foundation of any CSS reset, ensuring consistent spacing
-// across browsers, which vary widely in their default user-agent styles.
-// ==================================================
+/// @name Margin and Padding Reset
+/// @description Removes all default margin and padding from all elements to create
+/// a consistent baseline across all browsers.
 * {
   margin: 0;
   padding: 0;
 }
 
-// ==================================================
-// 🏠 RESET: BODY BASE STYLES
-// --------------------------------------------------
-// Establish fundamental body styles using core design tokens:
-// - Use flexbox for vertical layout.
-// - Apply consistent background and text colors reflecting the brand palette.
-// - Set a readable line-height and a clean sans-serif font family.
-// These choices form a solid, maintainable typographic baseline for the entire site.
-// ==================================================
+/// @name Body Base Styling
+/// @description Establishes the foundational visual style for the body element:
+/// sets flex layout, background, text color, font family, and line-height using
+/// design tokens from the theme.
 body {
   display: flex;
   flex-direction: column;
@@ -58,14 +45,9 @@ body {
   font-family: map.get($font-family, "sans");
 }
 
-// ==================================================
-// 🖼️ RESET: MEDIA ELEMENTS DISPLAY AND RESPONSIVENESS
-// --------------------------------------------------
-// Set media elements (images, picture, SVG) to display as block-level elements
-// and constrain their max-width to 100% of their containers.
-// This ensures media scales fluidly and respects container boundaries,
-// essential for responsive design and avoiding layout breaks.
-// ==================================================
+/// @name Media Element Reset
+/// @description Ensures responsive media elements by setting block display and
+/// max-width to 100%. Applies to images, picture tags, and SVGs.
 img,
 picture,
 svg {
@@ -73,14 +55,9 @@ svg {
   max-width: 100%;
 }
 
-// ==================================================
-// 🎛️ RESET: FORM CONTROL FONT INHERITANCE
-// --------------------------------------------------
-// Make form controls (input, button, textarea, select) inherit font styles
-// from their parent elements instead of using browser defaults.
-// This unifies typography and visual rhythm across UI components,
-// improving design consistency and user experience.
-// ==================================================
+/// @name Form Control Font Inheritance
+/// @description Makes all form controls inherit font styles from their parent elements,
+/// ensuring typographic consistency across the UI.
 input,
 button,
 textarea,
@@ -88,13 +65,9 @@ select {
   font: inherit;
 }
 
-// ==================================================
-// 🏷️ RESET: HEADING TYPOGRAPHY
-// --------------------------------------------------
-// Define color and line-height for all headings to maintain visual hierarchy.
-// Use predefined typography scales from design tokens to ensure consistent sizing
-// across all headings (h1–h6), reinforcing a clear content structure.
-// ==================================================
+/// @name Heading Reset
+/// @description Applies consistent color, line-height, and font sizes to headings (h1–h6)
+/// using the typographic scale defined in design tokens.
 h1,
 h2,
 h3,

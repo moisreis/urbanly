@@ -11,9 +11,8 @@
 // Base unit for font-size values.
 $base: 1rem !default;
 
-// Typography scale map: font sizes relative to base.
-// --------------------------------------------------
-// Provides a predictable set of typographic scales from 2xs to 3xl.
+/// @name Typography Scale
+/// @description Provides a predictable set of typographic scales from 2xs to 3xl.
 $font-size: (
         "2xs": $base * 0.75,
         "xs": $base * 0.875,
@@ -26,25 +25,15 @@ $font-size: (
 "4xl": $base * 3
 ) !default;
 
-//// Imports the `sans` typeface
-//@import "../../../assets/fonts/satoshi/css/satoshi";
-//@import "../../../assets/fonts/inter/scss/inter";
-//
-//// Imports the `serif` typeface
-//@import "../../../assets/fonts/gambarino/scss/gambarino";
-//@import "../../../assets/fonts/cardo/scss/cardo";
-
-// Font family map: defines typeface categories.
-// --------------------------------------------------
-// Centralizes choice of fonts for consistency.
+/// @name Font Family
+/// @description Centralizes choice of fonts for consistency.
 $font-family: (
         "sans": 'Inter', // Sans-serif for body text
         "heading": 'Cardo' // Serif for headings
 ) !default;
 
-// Font weight map: defines semantic weight names.
-// --------------------------------------------------
-// Provides clarity and avoids magic numbers in weight usage.
+///  @name Font Weight
+/// @description Provides clarity and avoids magic numbers in weight usage.
 $font-weight: (
         "light": 300,
         "normal": 400,
@@ -53,8 +42,8 @@ $font-weight: (
         "extraBold": 900
 ) !default;
 
-// Line height map: defines spacing between lines.
-// Ensures readability by controlling vertical rhythm.
+///  @name Line Height
+/// @description Ensures readability by controlling vertical rhythm.
 $line-height: (
         "body": 1.15,
         "heading": 1.5

@@ -9,39 +9,39 @@
   flex-direction: row;
 }
 
-@mixin Flex_row-start {
-  /* @mixin `Flex_row-start` */
+@mixin Flex_row__start {
+  /* @mixin `Flex_row__start` */
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-content: center;
 }
 
-@mixin Flex_row-center {
-  /* @mixin `Flex_row-center` */
+@mixin Flex_row__center {
+  /* @mixin `Flex_row__center` */
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-content: center;
 }
 
-@mixin Flex_row-end {
-  /* @mixin `Flex_row-end` */
+@mixin Flex_row__end {
+  /* @mixin `Flex_row__end` */
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   align-content: center;
 }
 
-@mixin Flex_row-around {
-  /* @mixin `Flex_row-around` */
+@mixin Flex_row__around {
+  /* @mixin `Flex_row__around` */
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-@mixin Flex_row-between {
-  /* @mixin `Flex_row-between` */
+@mixin Flex_row__between {
+  /* @mixin `Flex_row__between` */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -53,39 +53,39 @@
   flex-direction: column;
 }
 
-@mixin Flex_col-start {
-  /* @mixin `Flex_col-start` */
+@mixin Flex_col__start {
+  /* @mixin `Flex_col__start` */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-content: center;
 }
 
-@mixin Flex_col-center {
-  /* @mixin `Flex_col-center` */
+@mixin Flex_col__center {
+  /* @mixin `Flex_col__center` */
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
 }
 
-@mixin Flex_col-end {
-  /* @mixin `Flex_col-end` */
+@mixin Flex_col__end {
+  /* @mixin `Flex_col__end` */
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-content: center;
 }
 
-@mixin Flex_col-around {
-  /* @mixin `Flex_col-around` */
+@mixin Flex_col__around {
+  /* @mixin `Flex_col__around` */
   display: flex;
   flex-direction: column;
   justify-content: space-around;
 }
 
-@mixin Flex_col-between {
-  /* @mixin `Flex_col-between` */
+@mixin Flex_col__between {
+  /* @mixin `Flex_col__between` */
   display: flex;
   flex-direction: column;
   justify-content: space-between;

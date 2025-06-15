@@ -12,10 +12,9 @@
  * @created     2025-06-05
  */
 
-// Background system colors
-// --------------------------------------------------
-// Provides neutral background and border colors that define the tone
-// of the UI. Derived accents help add subtle depth to containers.
+/// @name Background System Colors
+/// @description Provides neutral background and border colors that define the tone
+/// of the UI. Derived accents help add subtle depth to containers.
 $background: #fbfbfb;
 $accent: darken($background, 2.5%);
 $accent-hover: darken($background, 3%);
@@ -24,37 +23,33 @@ $border: darken($background, 5%);
 $white: #ffffff;
 $black: #000000;
 
-// Primary color palette
-// --------------------------------------------------
-// Represents the main interactive color used in buttons, links, and active
-// states. Variants support hover, active feedback, and soft backgrounds.
+/// @name Primary Color Palette
+/// @description Represents the main interactive color used in buttons, links, and active
+/// states. Variants support hover, active feedback, and soft backgrounds.
 $primary: #ad8f53;
 $primary-hover: darken($primary, 5%);
 $primary-active: darken($primary, 10%);
 $primary-light: lighten($primary, 60%);
 
-// Secondary color palette
-// --------------------------------------------------
-// Used for secondary actions or elements that need attention without
-// competing with the primary color. Ideal for accents and callouts.
+/// @name Secondary Color Palette
+/// @description Used for secondary actions or elements that need attention without
+/// competing with the primary color. Ideal for accents and callouts.
 $secondary: #FF7601;
 $secondary-hover: darken($secondary, 5%);
 $secondary-active: darken($secondary, 10%);
 $secondary-light: lighten($secondary, 60%);
 
-// Tertiary color palette
-// --------------------------------------------------
-// Used for subtle accents, highlights, or supporting visual elements.
-// Less prominent than primary/secondary but helps with visual hierarchy.
+/// @name Tertiary Color Palette
+/// @description Used for subtle accents, highlights, or supporting visual elements.
+/// Less prominent than primary/secondary but helps with visual hierarchy.
 $tertiary: #819A91;
 $tertiary-hover: darken($tertiary, 5%);
 $tertiary-active: darken($tertiary, 10%);
 $tertiary-light: lighten($tertiary, 60%);
 
-// Text colors
-// --------------------------------------------------
-// Defines core text styles for headings, body, and muted/inactive text.
-// Designed to provide optimal legibility and contrast.
+/// @name Text Colors
+/// @description Defines core text styles for headings, body, and muted/inactive text.
+/// Designed to provide optimal legibility and contrast.
 $text-body: #444444;
-$text-heading: #111111;
-$text-muted: #777777;
+$text-heading: darken($text-body, 10%);
+$text-muted: lighten($text-body, 30%);

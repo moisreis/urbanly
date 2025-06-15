@@ -8,11 +8,11 @@
 @use "../../styles/config/tools/mediaQuery" as *;
 
 .box {
-  @include Flex_col-center;
+  @include Flex_col__center;
   align-items: center;
 
   @include media(isOnMobile) {
-    @include Flex_col-start;
+    @include Flex_col__start;
     align-items: start;
   }
 

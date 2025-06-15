@@ -7,7 +7,7 @@
 @use "../../styles/config/tools/border" as *;
 
 .box {
-  @include Flex_col-start;
+  @include Flex_col__start;
   width: $width;
   margin: auto;
   margin-top: 5vh !important;

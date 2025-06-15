@@ -38,7 +38,6 @@ interface ButtonProps {
  * />
  */
 const Button: React.FC<ButtonProps> = ({label, variant, icon, isRounded = false, isFullWidth = false, hasBackground = false, hasNoPadding = false}) => {
-
     return (
         <button
             type="button"

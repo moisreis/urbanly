@@ -7,25 +7,24 @@
 
 .box {
   padding: map.get($spacing, "md") map.get($spacing, "4xl");
-  //@include Border_bottom;
   border-color: rgba($border, 0.2);
-  @include Flex_row-between;
+  @include Flex_row__between;
   z-index: 10;
   backdrop-filter: blur(5px);
 
   &_left {
-    @include Flex_row-start;
+    @include Flex_row__start;
     width: 100%;
   }
 
   &_center {
-    @include Flex_row-center;
+    @include Flex_row__center;
     width: 100%;
     gap: map.get($spacing, "xs");
   }
 
   &_right {
-    @include Flex_row-end;
+    @include Flex_row__end;
     width: 100%;
     gap: map.get($spacing, "xs");
   }

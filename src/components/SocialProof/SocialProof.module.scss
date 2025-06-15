@@ -7,7 +7,7 @@
 @use "../../styles/config/tools/border" as *;
 
 .box {
-  @include Flex_col-center;
+  @include Flex_col__center;
   align-items: center;
   width: $width;
   margin: auto;

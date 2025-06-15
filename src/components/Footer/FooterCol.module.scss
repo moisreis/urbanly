@@ -9,7 +9,7 @@
 @use "../../styles/config/tools/position" as *;
 
 .lyt {
-  @include Flex_col-start;
+  @include Flex_col__start;
   gap: map.get($spacing, "xs");
 
   & > h4 {

@@ -8,10 +8,10 @@
 @use "../../styles/config/tools/border" as *;
 
 .box {
-  @include Flex_row-between;
+  @include Flex_row__between;
 
   @include media(isOnMobile) {
-    @include Flex_col-start;
+    @include Flex_col__start;
     gap: map.get($spacing, "xs");
   };
 

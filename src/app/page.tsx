@@ -1,10 +1,10 @@
 import {Search, User2, Globe, Sliders, HandshakeIcon} from "lucide-react";
-import Cta from "../components/Cta/Cta"; // Call-to-action section with search and background image
-import PropertyCard from "@/components/PropertyCard/PropertyCard"; // Displays individual property listings with key details
-import LocationCard from "@/components/LocationCard/LocationCard"; // Showcases popular cities or neighborhoods
-import Section from "../components/Section/Section"; // Generic container used to structure page content
+import Cta from "../components/Cta/Cta";
+import PropertyCard from "@/components/PropertyCard/PropertyCard";
+import LocationCard from "@/components/LocationCard/LocationCard";
+import Section from "../components/Section/Section";
 import SocialProof from "../components/SocialProof/SocialProof";
-import Button from "@/components/Button/Button"; // Displays trust-building content
+import Button from "@/components/Button/Button";
 
 export default function Main() {
     return (

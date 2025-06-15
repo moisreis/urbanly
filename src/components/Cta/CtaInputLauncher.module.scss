@@ -9,7 +9,7 @@
 
 .box {
   margin-top: map.get($spacing, "md");
-  @include Flex_row-center;
+  @include Flex_row__center;
   border-radius: map.get($spacing, "lg");
   background-color: $accent;
   padding: map.get($spacing, "sm") map.get($spacing, "sm") * 6;

@@ -9,7 +9,7 @@ $iconSize: map.get($spacing, "md"); // Base icon size
 $buttonSize: map.get($spacing, "xs"); // Base padding
 
 .mod {
-  @include Flex_row-center;
+  @include Flex_row__center;
   align-items: center;
   padding: $buttonSize $buttonSize * 2;
   background-color: $accent;

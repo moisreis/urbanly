@@ -8,26 +8,17 @@
  * @created     2025-06-05
  */
 
-// ==================================================
-// 🎨 SETTINGS: COLORS
-// --------------------------------------------------
-// Imports color variables for backgrounds, text, borders, and
-// interactive elements, ensuring visual consistency across UI.
-// ==================================================
+/// @name Color Tokens
+/// @description Imports global color definitions used for backgrounds, text,
+/// borders, and interactive states to maintain consistent visual theming.
 @use "settings/color";
 
-// ==================================================
-// 🔤 SETTINGS: TYPOGRAPHY
-// --------------------------------------------------
-// Imports typography tokens like font families, sizes, weights,
-// and line heights to maintain a scalable typographic system.
-// ==================================================
+/// @name Typography Tokens
+/// @description Loads global typography tokens such as font families, sizes,
+/// weights, and line heights to enforce a consistent, scalable type system.
 @use "settings/typography";
 
-// ==================================================
-// 📏 SETTINGS: SPACING
-// --------------------------------------------------
-// Imports spacing scale used for padding, margin, and layout gaps,
-// following a consistent modular spacing system.
-// ==================================================
+/// @name Spacing Tokens
+/// @description Forwards spacing scale values used across the application
+/// for margin, padding, and layout gaps, adhering to a modular spacing system.
 @forward "settings/spacing";

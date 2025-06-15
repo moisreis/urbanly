@@ -1,27 +1,52 @@
 import type {Metadata} from "next"; // Types for Next.js metadata configuration
 import "./globals.scss"; // Global SCSS styles with resets, variables, and base elements
-import {Footer} from "@/components/Footer/Footer"; // Global Footer component
+import {Footer} from "@/components/Footer/Footer";
 import Button from "@/components/Button/Button";
 import {Inter, Cardo} from 'next/font/google' // Google Fonts loaded via Next.js (Inter and Cardo)
 
 /**
- * 🔤 Loads global Google Fonts using Next.js font optimization:
- * - `Inter`: a modern, clean sans-serif used for body text and UI
- * - `Cardo`: a classic serif font, ideal for headings or highlights
+ * @name inter
+ * @author Moisés Reis
+ *
+ * @desc Load and configure the 'Inter' Google Font with Latin subset
+ *       for use across the application’s UI text elements.
+ *
+ * @param subsets - Array of font subsets to include (e.g., 'latin')
  */
 const inter = Inter({
     subsets: ['latin'],
 })
 
+/**
+ * @name cardo
+ * @author Moisés Reis
+ *
+ * @desc Load and configure the 'Cardo' Google Font with Latin subset and weight 400,
+ *       intended for headings or stylistic text to complement the main font.
+ *
+ * @param subsets - Array of font subsets to include (e.g., 'latin')
+ * @param weight - Font weight to load (e.g., "400")
+ */
 const cardo = Cardo({
     subsets: ['latin'],
     weight: "400",
 })
 
 /**
- * 🧾 Global metadata for the entire application
- * - Title: shown in browser tabs and search results
- * - Description: helps SEO and social sharing
+ * @name metadata
+ * @author Next.js
+ *
+ * @desc Export Next.js Metadata object for SEO and social sharing purposes.
+ *       Includes page title and description strings to appear in HTML metadata.
+ *
+ * @param title - The title of the web application or page
+ * @param description - The description shown in search results or previews
+ *
+ * @example
+ * export const metadata: Metadata = {
+ *   title: "Urbanly. Your city within reach",
+ *   description: "Your city within reach",
+ * };
  */
 export const metadata: Metadata = {
     title: "Urbanly. Your city within reach",
@@ -29,15 +54,16 @@ export const metadata: Metadata = {
 };
 
 /**
- * 🧩 Root layout of the application
- * - Wraps all pages with HTML structure, fonts, and persistent components
- * - Includes global footer
+ * @name RootLayout
+ * @author Next.js
+ *
+ * @desc Define the root layout component wrapping all pages.
+ *       It sets the html language, applies global fonts as classes,
+ *       renders children, and includes the site footer with navigation.
+ *
+ * @param children - ReactNode elements representing nested page content
  */
-export default function RootLayout({
-                                       children,
-                                   }: Readonly<{
-    children: React.ReactNode;
-}>) {
+export default function RootLayout({children}: Readonly<{ children: React.ReactNode }>) {
     return (
         <html lang="pt-BR" className={`${inter.className} ${cardo.className}`}>
         <body>

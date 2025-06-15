@@ -41,7 +41,7 @@
 }
 
 .box {
-  @include Flex_col-center;
+  @include Flex_col__center;
   align-items: center;
   gap: map.get($spacing, "lg");
 
@@ -63,5 +63,5 @@
   }
 
   // Generates the necessary __grid_$i classes
-  @include generateGrids(13);
+  @include generateGrids(12);
 }
