@@ -1,8 +1,8 @@
 import clsx from "clsx"; // Utility for conditional class name merging
-import styles from "./SocialProof.module.scss"; // todo: add comment
-import headerStyles from "./SocialProofHeader.module.scss"; // todo: add comment
-import containerStyles from "./SocialProofContainer.module.scss"; // todo: add comment
-import itemStyles from "./SocialProofItem.module.scss"; // todo: add comment
+import styles from "./SocialProof.module.scss"; // Styles for the SocialProof root container
+import headerStyles from "./SocialProofHeader.module.scss"; // Styles specific to the header section
+import containerStyles from "./SocialProofContainer.module.scss"; // Styles for the container wrapping the items
+import itemStyles from "./SocialProofItem.module.scss"; // Styles for individual social proof items
 
 interface SocialProofProps {
     title: string;
@@ -12,15 +12,22 @@ interface SocialProofProps {
 }
 
 /**
- * @name todo: add name here
+ * @name SocialProof
  * @author Moisés Reis
  *
- * @desc TODO: explain here
+ * @desc Compound React component to display social proof sections with a title,
+ * a configurable grid layout container, and individual proof items.
+ * Provides a flexible and reusable UI pattern for testimonials, stats, or endorsements.
  *
- * @param prop - TODO: explain here
+ * @param title - The main title of the social proof section.
+ * @param {number} [gridColumns=3] - Number of columns in the grid container.
+ * @param children - Nested SocialProof.Item components or other children.
  *
  * @example
- * <TODO: add example here>
+ * <SocialProof title="What People Say" gridColumns={4}>
+ *   <SocialProof.Item icon={<Icon />} title="User A" description="Great product!" />
+ *   <SocialProof.Item icon={<Icon />} title="User B" description="Highly recommend." />
+ * </SocialProof>
  */
 const SocialProof: React.FC<SocialProofProps> & {
     Header: typeof SocialProofHeader;
@@ -39,15 +46,15 @@ const SocialProof: React.FC<SocialProofProps> & {
 };
 
 /**
- * @name todo: add name here
+ * @name SocialProofHeader
  * @author Moisés Reis
  *
- * @desc TODO: explain here
+ * @desc Renders the header section with a title for the social proof component.
  *
- * @param prop - TODO: explain here
+ * @param title - The title text to display.
  *
  * @example
- * <TODO: add example here>
+ * <SocialProof.Header title="Customer Testimonials" />
  */
 const SocialProofHeader: React.FC<{ title: string }> = ({title}) => (
     <div className={headerStyles.box}>
@@ -56,15 +63,20 @@ const SocialProofHeader: React.FC<{ title: string }> = ({title}) => (
 );
 
 /**
- * @name todo: add name here
+ * @name SocialProofContainer
  * @author Moisés Reis
  *
- * @desc TODO: explain here
+ * @desc A flexible container for social proof items, using CSS grid layout.
+ * The number of columns is controlled by the `gridColumns` prop and affects
+ * the applied CSS class for layout.
  *
- * @param prop - TODO: explain here
+ * @param children - Content elements inside the container.
+ * @param gridColumns - Number of grid columns (affects CSS class).
  *
  * @example
- * <TODO: add example here>
+ * <SocialProof.Container gridColumns={4}>
+ *   {children}
+ * </SocialProof.Container>
  */
 const SocialProofContainer: React.FC<{ children: React.ReactNode, gridColumns: number }> = ({children, gridColumns = 3}) => (
     <div className={clsx(
@@ -75,15 +87,18 @@ const SocialProofContainer: React.FC<{ children: React.ReactNode, gridColumns: n
 );
 
 /**
- * @name todo: add name here
+ * @name SocialProofItem
  * @author Moisés Reis
  *
- * @desc TODO: explain here
+ * @desc Represents an individual item inside the social proof container,
+ * containing an icon, a title, and a descriptive text.
  *
- * @param prop - TODO: explain here
+ * @param icon - Icon or image displayed with the item.
+ * @param title - The title or headline of the item.
+ * @param description - Supporting text describing the item.
  *
  * @example
- * <TODO: add example here>
+ * <SocialProof.Item icon={<UserIcon />} title="John Doe" description="Amazing service!" />
  */
 const SocialProofItem: React.FC<{ icon: React.ReactNode, title: string, description: string }> = ({icon, title, description}) => (
     <div className={itemStyles.box}>
@@ -93,8 +108,8 @@ const SocialProofItem: React.FC<{ icon: React.ReactNode, title: string, descript
     </div>
 );
 
-SocialProof.Header = SocialProofHeader; // todo: add comment
-SocialProof.Container = SocialProofContainer; // todo: add comment
-SocialProof.Item = SocialProofItem; // todo: add comment
+SocialProof.Header = SocialProofHeader; // Attach Header subcomponent to SocialProof
+SocialProof.Container = SocialProofContainer; // Attach Container subcomponent to SocialProof
+SocialProof.Item = SocialProofItem; // Attach Item subcomponent to SocialProof
 
 export default SocialProof;

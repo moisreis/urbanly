@@ -5,6 +5,7 @@
 @use "../../styles/config/tools/flex" as *;
 @use "../../styles/config/tools/grid" as *;
 @use "../../styles/config/tools/border" as *;
+@use "../../styles/config/tools/mediaQuery" as *;
 
 /**
  * @mixin generateGrids
@@ -30,6 +31,11 @@
       display: grid;
       grid-template-columns: repeat($i, minmax(0, 1fr));
       gap: map.get($spacing, "2xl");
+
+      @include media(isOnMobile) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: map.get($spacing, "2xl");
+      }
     }
   }
 }

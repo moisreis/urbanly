@@ -4,10 +4,16 @@
 @use "../../styles/config/settings/typography" as *;
 @use "../../styles/config/tools/flex" as *;
 @use "../../styles/config/tools/grid" as *;
+@use "../../styles/config/tools/mediaQuery" as *;
 @use "../../styles/config/tools/border" as *;
 
 .box {
   @include Flex_row-between;
+
+  @include media(isOnMobile) {
+    @include Flex_col-start;
+    gap: map.get($spacing, "xs");
+  };
 
   & > h2 {
     font-family: map.get($font-family, "sans");

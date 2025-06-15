@@ -7,10 +7,16 @@
 @use "../../styles/config/tools/grid" as *;
 @use "../../styles/config/tools/border" as *;
 @use "../../styles/config/tools/position" as *;
+@use "../../styles/config/tools/mediaQuery" as *;
 
 .lyt {
   padding: map.get($spacing, "4xl");
   background: $accent;
   @include Grid_7;
   width: 100vw;
+
+  @include media(isOnMobile) {
+    padding: map.get($spacing, "lg");
+    gap: map.get($spacing, "2xl");
+  }
 }

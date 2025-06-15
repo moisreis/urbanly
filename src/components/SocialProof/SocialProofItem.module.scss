@@ -5,10 +5,17 @@
 @use "../../styles/config/tools/flex" as *;
 @use "../../styles/config/tools/grid" as *;
 @use "../../styles/config/tools/border" as *;
+@use "../../styles/config/tools/mediaQuery" as *;
 
 .box {
   @include Flex_col-center;
   align-items: center;
+
+  @include media(isOnMobile) {
+    @include Flex_col-start;
+    align-items: start;
+  }
+
   gap: map.get($spacing, "sm");
 
   & > h3 {
@@ -17,6 +24,10 @@
     font-size: map.get($font-size, "lg");
     text-transform: capitalize;
     text-align: center;
+
+    @include media(isOnMobile) {
+      text-align: left;
+    }
   }
 
   & > p {
@@ -25,5 +36,9 @@
     font-size: map.get($font-size, "xs");
     color: $text-muted;
     text-align: center;
+
+    @include media(isOnMobile) {
+      text-align: left;
+    }
   }
 }
