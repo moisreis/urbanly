@@ -18,7 +18,7 @@
   & > h2 {
     font-family: map.get($font-family, "sans");
     font-weight: map.get($font-weight, "light");
-    font-size: map.get($font-size, "lg");
+    font-size: map.get($font-size, "xl");
     text-transform: capitalize;
   }
 }

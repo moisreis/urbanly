@@ -1,4 +1,4 @@
-import {Search, User2, Globe, Sliders, HandshakeIcon} from "lucide-react";
+import {Search, User2, Globe, Sliders, HandshakeIcon, ArrowUpRight} from "lucide-react";
 import Cta from "../components/Cta/Cta"; // Call-to-action section with search and background image
 import PropertyCard from "@/components/PropertyCard/PropertyCard"; // Displays individual property listings with key details
 import LocationCard from "@/components/LocationCard/LocationCard"; // Showcases popular cities or neighborhoods
@@ -14,14 +14,14 @@ export default function Main() {
                 title="Explore as melhores propriedades da região"
                 description="Clientes satisfeitos em mais de 30 cidades"
                 note="Explore 700+ casas e apartamentos para venda e aluguel em toda a região"
-                background="/images/UhpYKnqZwE8.jpg"
+                background="/images/L7EwHkq1B2s.jpg"
                 placeholder="Matriz, Jacobina, Bahia"
                 icon={<Search/>}
                 navigation={
                     <>
-                        <Button label="Alugue um apê" variant="link" hasBackground={true}/>
-                        <Button label="Compre um imóvel" variant="link" hasBackground={true}/>
-                        <Button label="Anuncie uma venda" variant="link" hasBackground={true}/>
+                        <Button label="Alugue um apê" variant="link" hasBackground={true} isRounded={true}/>
+                        <Button label="Compre um imóvel" variant="link" hasBackground={true} isRounded={true}/>
+                        <Button label="Anuncie uma venda" variant="link" hasBackground={true} isRounded={true}/>
                         <Button label="Entrar" variant="outline" hasBackground={true} isRounded={true} icon={<User2/>}/>
                     </>
                 }
@@ -43,7 +43,7 @@ export default function Main() {
                 subtitle="Este apartamento mobiliado na Serrinha é uma excelente opção para quem busca conforto e praticidade em uma localização privilegiada."
             >
                 <PropertyCard title="Apartamento mobiliado na Serrinha" price="R$2.500,00/mês"
-                              cover="/images/mx4mSkK9zeo.jpg"/>
+                              cover="/images/8mRwPLqUE6w.jpg"/>
             </Section>
             <SocialProof title="O principal mercado para imóveis de luxo e ativos de alto valor." gridColumns={3}>
                 <SocialProof.Item icon={<Globe />}  title="Todos os Melhores Imóveis de Luxo" description="Trabalhamos com mais de 16.000 escritórios imobiliários de alto padrão em todo o mundo, garantindo acesso a mais de 400.000 das melhores propriedades" />

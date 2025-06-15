@@ -65,7 +65,7 @@ const Section: React.FC<SectionProps> & {
 const SectionHeader: React.FC<{ title: string, button?: string }> = ({title, button}) => (
     <div className={headerStyles.box}>
         <h2>{title}</h2>
-        {button && (<Button variant="primary" hasBackground={false} label={button}/>)}
+        {button && (<Button variant="outline" hasBackground={false} label={button} isRounded={true}/>)}
     </div>
 );
 
@@ -98,7 +98,7 @@ const SectionContent: React.FC<{ gridColumns?: number, hasVerticalLayout?: boole
                 <h3>{title}</h3>
                 {subtitle && <p>{subtitle}</p>}
                 {button && (
-                    <Button variant="outline" hasBackground={false} label={button}/>
+                    <Button variant="outline" hasBackground={false} label={button} isRounded={true}/>
                 )}
             </div>
         )}
