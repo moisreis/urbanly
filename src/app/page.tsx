@@ -1,4 +1,4 @@
-import {Search, User2, Globe, Sliders, HandshakeIcon, ArrowUpRight} from "lucide-react";
+import {Search, User2, Globe, Sliders, HandshakeIcon} from "lucide-react";
 import Cta from "../components/Cta/Cta"; // Call-to-action section with search and background image
 import PropertyCard from "@/components/PropertyCard/PropertyCard"; // Displays individual property listings with key details
 import LocationCard from "@/components/LocationCard/LocationCard"; // Showcases popular cities or neighborhoods
