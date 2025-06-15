@@ -5,13 +5,13 @@
 @use "../../styles/config/tools/flex" as *;
 @use "../../styles/config/tools/border" as *;
 
-// Base icon size for the badge
-$iconSize: map.get($spacing, "md");
+$iconSize: map.get($spacing, "md"); // Base icon size
+$badgeSize: map.get($spacing, "2xs"); // Base padding
 
 .mod {
   @include Flex_row-center;
   align-items: center;
-  padding: map.get($spacing, "2xs") map.get($spacing, "2xs") * 2;
+  padding: $badgeSize $badgeSize * 2;
   background-color: $accent;
   border-radius: map.get($spacing, "lg");
   gap: map.get($spacing, "xs");

@@ -5,13 +5,13 @@
 @use "../../styles/config/tools/flex" as *;
 @use "../../styles/config/tools/border" as *;
 
-// Base icon size for the button
-$iconSize: map.get($spacing, "md");
+$iconSize: map.get($spacing, "md"); // Base icon size
+$buttonSize: map.get($spacing, "xs"); // Base padding
 
 .mod {
   @include Flex_row-center;
   align-items: center;
-  padding: map.get($spacing, "xs") map.get($spacing, "xs") * 2;
+  padding: $buttonSize $buttonSize * 2;
   background-color: $accent;
   @include Border;
   text-transform: capitalize;

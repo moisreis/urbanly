@@ -7,12 +7,12 @@
 @use "../../styles/config/tools/border" as *;
 
 .box {
-  @include Flex_col-center;
-  align-items: center;
-  width: $width;
-  margin: auto;
-  margin-top: 5vh !important;
-  padding: map.get($spacing, "3xl") !important;
-  gap: map.get($spacing, "2xl");
-  background-color: $accent;
+  @include Flex_row-between;
+
+  & > h2 {
+    font-family: map.get($font-family, "sans");
+    font-weight: map.get($font-weight, "light");
+    font-size: map.get($font-size, "lg");
+    text-transform: capitalize;
+  }
 }

@@ -1,0 +1,61 @@
+@use "sass:map";
+@use "../../styles/config/settings/spacing" as *;
+@use "../../styles/config/settings/color" as *;
+@use "../../styles/config/settings/typography" as *;
+@use "../../styles/config/tools/flex" as *;
+@use "../../styles/config/tools/grid" as *;
+@use "../../styles/config/tools/border" as *;
+
+/**
+ * @mixin generateGrids
+ *
+ * Generates grid utility classes from 2 columns up to the specified count.
+ * Each generated class follows the pattern: &_grid__N where N is the number of columns.
+ * The grid uses `repeat(N, minmax(0, 1fr))` for equal column distribution,
+ * and applies a consistent gap size based on your spacing scale.
+ *
+ * Parameters:
+ * @param {Number} $count - The maximum number of grid columns to generate classes for.
+ *
+ * Usage example:
+ * .container {
+ *   @include generateGrids(12);
+ * }
+ *
+ * This will generate grid classes: &_grid__2, &_grid__3, ..., &_grid__12
+ */
+@mixin generateGrids($count) {
+  @for $i from 2 through $count {
+    &_grid__#{$i} {
+      display: grid;
+      grid-template-columns: repeat($i, minmax(0, 1fr));
+      gap: map.get($spacing, "2xl");
+    }
+  }
+}
+
+.box {
+  @include Flex_col-center;
+  align-items: center;
+  gap: map.get($spacing, "lg");
+
+  & > h3 {
+    font-family: map.get($font-family, "heading");
+    font-weight: map.get($font-weight, "bold");
+    font-size: map.get($font-size, "2xl");
+    text-transform: capitalize;
+    text-align: center;
+  }
+
+  & > p {
+    font-family: map.get($font-family, "sans");
+    font-weight: map.get($font-weight, "normal");
+    font-size: map.get($font-size, "md");
+    color: $text-muted;
+    max-width: map.get($spacing, "4xl") * 3;
+    text-align: center;
+  }
+
+  // Generates the necessary __grid_$i classes
+  @include generateGrids(13);
+}

@@ -1,6 +1,6 @@
 import styles from "./LocationCard.module.scss"; // LocationCard component styles
-import locationCardCoverStyles from "./LocationCardCover.module.scss"; // Styles specific to the cover image section of the LocationCard component
-import locationCardContentStyles from "./LocationCardContent.module.scss"; // Styles specific to the content section of the LocationCard component
+import coverStyles from "./LocationCardCover.module.scss"; // Styles specific to the cover image section of the LocationCard component
+import contentStyles from "./LocationCardContent.module.scss"; // Styles specific to the content section of the LocationCard component
 import Image from 'next/image'; // Next.js optimized image component
 
 interface LocationCardProps {
@@ -50,7 +50,7 @@ const LocationCard: React.FC<LocationCardProps> & {
  * <LocationCard.Cover cover="/images/rio.jpg" location="Rio de Janeiro" />
  */
 const LocationCardCover: React.FC<{ cover: string; location: string }> = ({cover, location}: { cover: string; location: string; }) => (
-    <div className={locationCardCoverStyles.box}>
+    <div className={coverStyles.box}>
         <Image
             src={cover}
             width={2048}
@@ -71,7 +71,7 @@ const LocationCardCover: React.FC<{ cover: string; location: string }> = ({cover
  * <LocationCard.Content location="Curitiba" quantity="85" />
  */
 const LocationCardContent: React.FC<{ location: string; quantity: string }> = ({quantity, location}: { location: string; quantity: string; }) => (
-    <div className={locationCardContentStyles.box}>
+    <div className={contentStyles.box}>
         <h4>{location}</h4>
         <h3>{quantity} imóveis</h3>
     </div>

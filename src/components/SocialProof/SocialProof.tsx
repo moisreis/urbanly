@@ -1,39 +1,100 @@
-import SCSS from "./SocialProof.module.scss";
-import style from "@/components/Button/Button.module.scss";
-import {House, SlidersHorizontal, UserCheck} from "lucide-react";
+import clsx from "clsx"; // Utility for conditional class name merging
+import styles from "./SocialProof.module.scss"; // todo: add comment
+import headerStyles from "./SocialProofHeader.module.scss"; // todo: add comment
+import containerStyles from "./SocialProofContainer.module.scss"; // todo: add comment
+import itemStyles from "./SocialProofItem.module.scss"; // todo: add comment
 
 interface SocialProofProps {
     title: string;
     buttonLabel?: string;
     gridColumns?: number;
+    children?: React.ReactNode;
 }
 
-const SocialProof: React.FC<SocialProofProps> = ({title, gridColumns = 5}) => {
-    const gridClass = SCSS[`container_grid__${gridColumns}`] ?? style.container_grid__3;
+/**
+ * @name todo: add name here
+ * @author Moisés Reis
+ *
+ * @desc TODO: explain here
+ *
+ * @param prop - TODO: explain here
+ *
+ * @example
+ * <TODO: add example here>
+ */
+const SocialProof: React.FC<SocialProofProps> & {
+    Header: typeof SocialProofHeader;
+    Container: typeof SocialProofContainer;
+    Item: typeof SocialProofItem;
+} = ({title, children, gridColumns = 3}) => {
+
     return (
-        <section className={SCSS.container}>
-            <div className={SCSS.container_header}>
-                <h2>{title}</h2>
-            </div>
-            <div className={gridClass}>
-                <div className={SCSS.container_item}>
-                    <House/>
-                    <h3>As Melhores Oportunidades Imobiliárias em Jacobina</h3>
-                    <p>Conectamos você às principais imobiliárias e corretores especializados da região de Jacobina, garantindo acesso a uma seleção exclusiva de imóveis de alto padrão, terrenos valorizados e propriedades com grande potencial de investimento.</p>
-                </div>
-                <div className={SCSS.container_item}>
-                    <SlidersHorizontal/>
-                    <h3>Busca Personalizada</h3>
-                    <p>Sua busca é feita sob medida. Oferecemos filtros avançados, listas de favoritos, alertas de novas oportunidades e recomendações personalizadas, tudo para facilitar sua jornada na escolha do imóvel ideal.</p>
-                </div>
-                <div className={SCSS.container_item}>
-                    <UserCheck/>
-                    <h3>Contato Direto com o Mercado Local</h3>
-                    <p>Nosso catálogo é atualizado constantemente, com novas listagens inseridas diariamente. Você tem acesso a preços em tempo real e contato direto com os profissionais responsáveis por cada imóvel.</p>
-                </div>
-            </div>
+        <section className={styles.box}>
+            <SocialProof.Header title={title}/>
+            <SocialProof.Container gridColumns={gridColumns}>
+                {children}
+            </SocialProof.Container>
         </section>
     );
 };
+
+/**
+ * @name todo: add name here
+ * @author Moisés Reis
+ *
+ * @desc TODO: explain here
+ *
+ * @param prop - TODO: explain here
+ *
+ * @example
+ * <TODO: add example here>
+ */
+const SocialProofHeader: React.FC<{ title: string }> = ({title}) => (
+    <div className={headerStyles.box}>
+        <h2>{title}</h2>
+    </div>
+);
+
+/**
+ * @name todo: add name here
+ * @author Moisés Reis
+ *
+ * @desc TODO: explain here
+ *
+ * @param prop - TODO: explain here
+ *
+ * @example
+ * <TODO: add example here>
+ */
+const SocialProofContainer: React.FC<{ children: React.ReactNode, gridColumns: number }> = ({children, gridColumns = 3}) => (
+    <div className={clsx(
+        containerStyles[`box_grid__${gridColumns}`]
+    )}>
+        {children}
+    </div>
+);
+
+/**
+ * @name todo: add name here
+ * @author Moisés Reis
+ *
+ * @desc TODO: explain here
+ *
+ * @param prop - TODO: explain here
+ *
+ * @example
+ * <TODO: add example here>
+ */
+const SocialProofItem: React.FC<{ icon: React.ReactNode, title: string, description: string }> = ({icon, title, description}) => (
+    <div className={itemStyles.box}>
+        {icon}
+        <h3>{title}</h3>
+        <p>{description}</p>
+    </div>
+);
+
+SocialProof.Header = SocialProofHeader; // todo: add comment
+SocialProof.Container = SocialProofContainer; // todo: add comment
+SocialProof.Item = SocialProofItem; // todo: add comment
 
 export default SocialProof;

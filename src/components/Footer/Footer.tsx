@@ -1,5 +1,5 @@
 import styles from './Footer.module.scss'; // Styles specific to the Footer layout and component
-import footerColStyles from './FooterCol.module.scss'; // Styles specific to each Footer column
+import colStyles from './FooterCol.module.scss'; // Styles specific to each Footer column
 
 interface FooterProps {
     navigation: React.ReactNode;
@@ -56,7 +56,7 @@ export const Footer: React.FC<FooterProps> & {
  * />
  */
 const FooterCol: React.FC<{ label: string, links: React.ReactNode }> = ({label, links}) => (
-    <div className={footerColStyles.lyt}>
+    <div className={colStyles.lyt}>
         <h4>{label}</h4>
         {links}
     </div>
